@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Face Recognition</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.1/socket.io.js"></script>
+</head>
+<body>
+    <video id="video" width="640" height="480" autoplay></video>
+    <div id="result"></div>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port, {
+            timeout: 60000,  // Adjust value as needed
+        });
+
+        socket.on('connect', () => {
+            console.log('Connected to server');
+        });
+
+        socket.on('disconnect', () => {
+            console.log('Disconnected from server');
+        });
+
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    var video = document.getElementById('video');
+                    video.srcObject = stream;
+
+                    // Function to send video frames to the server
+                    function sendFrame() {
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+
+                        // Set the canvas size to match the video stream
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+
+                        // Draw the current frame on the canvas
+                        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+
+                        // Convert the canvas image to a data URL or Blob
+                        const frameData = canvas.toDataURL();
+
+                        // Send the frame data to the server via SocketIO
+                        socket.emit('stream_frame', frameData);
+                        console.log("==>imageurl: ", frameData)
+                        // Schedule the next frame
+                        requestAnimationFrame(sendFrame);
+                    }
+
+                    // Start sending video frames to the server
+                    sendFrame();
+
+                })
+                .catch((error) => {
+                    console.error('Error accessing video stream:', error);
+                });
+        } else {
+            console.error('getUserMedia is not supported in this browser.');
+        }
+
+        socket.on('face_recognition_result', function(data) {
+            console.log('Received face recognition result:', data);
+
+            // Display the result in the 'result' div
+            document.getElementById('result').innerText = `Matched: ${data.matched}, Name: ${data.name}`;
+            console.log('====>result', result);
+        });
+
+        socket.on('connect_error', (error) => {
+            console.error('Connection error:', error);
+        });
+
+        socket.on('error', (error) => {
+            console.error('Socket error:', error);
+        });
+
+       socket.on('reconnect', (attemptNumber) => {
+        console.log('Reconnected to server on attempt', attemptNumber);
+    // Handle reconnection as needed
+});
+    </script>
+</body>
+</html>
