@@ -256,12 +256,13 @@ def handle_webcam_frame(data):
                     name = list(image_database.keys())[first_match_index]
                     logging.info("Name: %s", name)
                     # Emit the results to the connected clients
-
-                    socketio.emit('face_recognition_result', {'matched': True, 'name': name})
-                else:
-                    logging.info("Frame is empty")
-                    # Send an appropriate response to the client
-                    socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown'})
+                    result = {'matched': True, 'name': name, 'spoofing': 'Face recognize AntiSpoof'}
+                    break
+                socketio.emit('face_recognition_result', {'matched': True, 'name': name})
+                # else:
+                #     logging.info("Frame is empty")
+                #     # Send an appropriate response to the client
+                #     socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown'})
 
         else:
             socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown'})

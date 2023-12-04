@@ -1,3 +1,5 @@
+#final project app for realtime face detection and antispoofing frontend into index.html
+
 import base64
 import datetime
 import logging
@@ -76,6 +78,7 @@ def handle_disconnect():
     socketio.emit('disconnect_response', {'status': 'disconnected'})
 
 # Event handler for streaming frames from the client
+# Event handler for streaming frames from the client
 @socketio.on('stream_frame')
 def handle_webcam_frame(data):
     try:
@@ -93,9 +96,14 @@ def handle_webcam_frame(data):
         # Check if 'frame_np' is not None before using it
         if frame_np is not None:
             # Perform anti-spoofing test using the 'test' function
-            label = test(image=frame_np, model_dir='/path/to/antispoofing/model', device_id=0)
+            label, confidence = test(image=frame_np,
+                                model_dir=r"C:\Users\Admin\PycharmProjects\Facedetection_matched_ML\resources\anti_spoof_models",
+                                device_id=0)
+            print("===>lable", label)
+            print("===>confidence", confidence)
+            spoofing_threshold = 0.5
 
-            if label == 1:
+            if label == 1 and confidence > spoofing_threshold:
                 # Proceed with face recognition if not spoofed
                 rgb_frame = cv2.cvtColor(frame_np, cv2.COLOR_BGR2RGB)
 
@@ -103,31 +111,35 @@ def handle_webcam_frame(data):
                 face_locations = face_recognition.face_locations(rgb_frame)
                 face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
 
+                # Initialize result dictionary
+                result = {'matched': False, 'name': 'Unknown', 'spoofing': 'Spoofed'}
+
                 for face_encoding in face_encodings:
                     # Check for face match with images in the image_database
                     matches = face_recognition.compare_faces(list(image_database.values()), face_encoding)
 
-                    name = "Unknown"  # Default name if no match found
-
-                    # If a match is found, use the name from the image_database
+                    # If a match is found, update the result dictionary
                     if True in matches:
                         first_match_index = matches.index(True)
                         name = list(image_database.keys())[first_match_index]
                         logging.info("Name: %s", name)
-                        # Emit the results to the connected clients
-                        socketio.emit('face_recognition_result', {'matched': True, 'name': name})
-                    else:
-                        logging.info("Frame is empty")
-                        # Send an appropriate response to the client
-                        socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown'})
-            else:
-                # Spoofing detected, emit a response
-                logging.warning("Spoofing detected!")
-                socketio.emit('face_recognition_result', {'matched': False, 'name': 'Spoofed'})
+                        result = {'matched': True, 'name': name, 'spoofing': 'Face recognize AntiSpoof'}
+                        break
 
+                # Emit the results to the connected clients
+                socketio.emit('face_recognition_result', result)
+            else:
+                socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'spoofing': 'Spoofed'})
+                logging.error("frame does not detect a proper face")
         else:
+            # Emit an appropriate response to the client
             socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown'})
             logging.error("frame does not detect a proper face")
+
+
+
+
+
     except Exception as e:
         logging.error(f"Error: {e}")
 

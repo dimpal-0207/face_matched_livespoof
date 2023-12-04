@@ -28,31 +28,36 @@
                     var video = document.getElementById('video');
                     video.srcObject = stream;
 
-                    // Function to send video frames to the server
-                    function sendFrame() {
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
+                    // Function to send video frames to the server at a 10-second interval
+                    function sendFramesRegularly() {
+                        // Function to send a single video frame
+                        function sendFrame() {
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
 
-                        // Set the canvas size to match the video stream
-                        canvas.width = video.videoWidth;
-                        canvas.height = video.videoHeight;
+                            // Set the canvas size to match the video stream
+                            canvas.width = video.videoWidth;
+                            canvas.height = video.videoHeight;
 
-                        // Draw the current frame on the canvas
-                        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                            // Draw the current frame on the canvas
+                            context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
+                            // Convert the canvas image to a data URL or Blob
+                            const frameData = canvas.toDataURL();
 
-                        // Convert the canvas image to a data URL or Blob
-                        const frameData = canvas.toDataURL();
+                            // Send the frame data to the server via SocketIO
+                            socket.emit('stream_frame', frameData);
+                        }
 
-                        // Send the frame data to the server via SocketIO
-                        socket.emit('stream_frame', frameData);
-                        console.log("==>imageurl: ", frameData)
-                        // Schedule the next frame
-                        requestAnimationFrame(sendFrame);
+                        // Start sending video frames immediately
+                        sendFrame();
+
+                        // Schedule the next frame to be sent every 10 seconds
+                        setInterval(sendFrame, 2000);
                     }
 
                     // Start sending video frames to the server
-                    sendFrame();
+                    sendFramesRegularly();
 
                 })
                 .catch((error) => {
@@ -78,10 +83,11 @@
             console.error('Socket error:', error);
         });
 
-       socket.on('reconnect', (attemptNumber) => {
-        console.log('Reconnected to server on attempt', attemptNumber);
-    // Handle reconnection as needed
-});
+        socket.on('reconnect', (attemptNumber) => {
+            console.log('Reconnected to server on attempt', attemptNumber);
+            // Handle reconnection as needed
+        });
     </script>
 </body>
 </html>
+
