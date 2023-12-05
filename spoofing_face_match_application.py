@@ -106,8 +106,8 @@ def handle_webcam_frame(data):
             label, confidence = test(image=frame_np,
                                 model_dir=r"C:\Users\Admin\PycharmProjects\Facedetection_matched_ML\resources\anti_spoof_models",
                                 device_id=0)
-            print("===>lable", label)
-            print("===>confidence", confidence)
+            logging.info("===>lable: %s", label)
+            logging.info("===>confidence : %s", confidence)
             spoofing_threshold = 0.5
 
             if label == 1 and confidence > spoofing_threshold:
@@ -130,13 +130,13 @@ def handle_webcam_frame(data):
                         first_match_index = matches.index(True)
                         name = list(image_database.keys())[first_match_index]
                         logging.info("Name: %s", name)
-                        result = {'matched': True, 'name': name, 'spoofing': 'Face recognize AntiSpoof'}
+                        result = {'matched': True, 'name': name, 'spoofing': 'Real face detect'}
                         break
 
                 # Emit the results to the connected clients
                 socketio.emit('face_recognition_result', result)
             else:
-                socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'spoofing': 'Spoofed'})
+                socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'spoofing': 'Spoofed face detect'})
                 logging.error("frame does not detect a proper face")
         else:
             # Emit an appropriate response to the client

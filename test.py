@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time : 20-6-9 下午3:06
-# @Author : zhuying
-# @Company : Minivision
-# @File : test.py
-# @Software : PyCharm
+
 
 import os
 import numpy as np
