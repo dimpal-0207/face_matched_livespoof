@@ -61,24 +61,31 @@ for obj in response_.get('Contents', []):
 video_capture = cv2.VideoCapture(0)
 
 # Route for rendering the index.html file
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 # Event handler for client connection
+
+
 @socketio.on('connect')
 def handle_connect():
     logging.info("Client connected")
     socketio.emit('connect', {'status': 'connected with server'})
 
 # Event handler for client disconnection
+
+
 @socketio.on('disconnect')
 def handle_disconnect():
     logging.info("Client disconnected")
     socketio.emit('disconnect_response', {'status': 'disconnected'})
 
 # Event handler for streaming frames from the client
-# Event handler for streaming frames from the client
+
+
 @socketio.on('stream_frame')
 def handle_webcam_frame(data):
     try:
@@ -135,10 +142,6 @@ def handle_webcam_frame(data):
             # Emit an appropriate response to the client
             socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown'})
             logging.error("frame does not detect a proper face")
-
-
-
-
 
     except Exception as e:
         logging.error(f"Error: {e}")
