@@ -40,7 +40,7 @@ image_database = {}
 # Iterate over objects in the folder
 for obj in response_.get('Contents', []):
     object_key = obj['Key']
-    if object_key.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+    if object_key.lower().endswith(('.png', '.jpg', '.jpeg')):
         print(f"Processing Image File: {object_key}")
 
         # Download the image
@@ -65,7 +65,7 @@ video_capture = cv2.VideoCapture(0)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 # Event handler for client connection
 
@@ -106,8 +106,8 @@ def handle_webcam_frame(data):
             label, confidence = test(image=frame_np,
                                 model_dir=r"C:\Users\Admin\PycharmProjects\Facedetection_matched_ML\resources\anti_spoof_models",
                                 device_id=0)
-            logging.info("===>lable: %s", label)
-            logging.info("===>confidence : %s", confidence)
+            # logging.info("===>lable: %s", label)
+            # logging.info("===>confidence : %s", confidence)
             spoofing_threshold = 0.5
 
             if label == 1 and confidence > spoofing_threshold:
@@ -119,7 +119,7 @@ def handle_webcam_frame(data):
                 face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
 
                 # Initialize result dictionary
-                result = {'matched': False, 'name': 'Unknown', 'spoofing': 'Spoofed'}
+                result = {'matched': False, 'name': 'Unknown', 'message': 'please provide real face '}
 
                 for face_encoding in face_encodings:
                     # Check for face match with images in the image_database
@@ -130,17 +130,17 @@ def handle_webcam_frame(data):
                         first_match_index = matches.index(True)
                         name = list(image_database.keys())[first_match_index]
                         logging.info("Name: %s", name)
-                        result = {'matched': True, 'name': name, 'spoofing': 'Real face detect'}
+                        result = {'matched': True, 'name': name, 'message': 'Match Found!'}
                         break
 
                 # Emit the results to the connected clients
                 socketio.emit('face_recognition_result', result)
             else:
-                socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'spoofing': 'Spoofed face detect'})
+                socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'message': 'not matching face with the DB stored image'})
                 logging.error("frame does not detect a proper face")
         else:
             # Emit an appropriate response to the client
-            socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown'})
+            socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown','message': 'failed to detect the face'})
             logging.error("frame does not detect a proper face")
 
     except Exception as e:
@@ -151,3 +151,9 @@ if __name__ == '__main__':
     socketio.run(app, debug=True, port=8080)
     video_capture.release()
     cv2.destroyAllWindows()
+
+
+
+
+
+
