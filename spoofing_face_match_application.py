@@ -65,7 +65,7 @@ video_capture = cv2.VideoCapture(0)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return "<h2>welcome to facedetection server for crest </h2>"
 
 # Event handler for client connection
 
@@ -148,7 +148,7 @@ def handle_webcam_frame(data):
 
 # Main entry point
 if __name__ == '__main__':
-    socketio.run(app, debug=True, port=8080)
+    socketio.run(app, host="0.0.0.0" ,debug=True, port=5001)
     video_capture.release()
     cv2.destroyAllWindows()
 
