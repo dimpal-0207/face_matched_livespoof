@@ -1,25 +1,42 @@
-+++++ Face Liveness Detection +++++ 
-Use Anti_SPoof model for predict real face and spoof face:
-Project Description:
+# Face Detection and Antispoofing Project
 
+This project implements face detection and antispoofing features and emits results via sockets.
 
-face anti-spoofing model with training architecture, data preprocessing method, model training & test script and open source APK for real time testing.
+## Table of Contents
 
-The main purpose of silent face anti-spoofing detection technology is to judge whether the face in front of the machine is real or fake. The face presented by other media can be defined as false face, including printed paper photos, display screen of electronic products, silicone mask, 3D human image, etc. At present, the mainstream solutions includes cooperative living detection and non cooperative living detection (silent living detection). Cooperative living detection requires the user to complete the specified action according to the prompt, and then carry out the live verification, while the silent live detection directly performs the live verification.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Socket Result Format](#socket-result-format)
+- [Contributing](#contributing)
+- [License](#license)
 
-Since the Fourier spectrum can reflect the difference of true and false faces in frequency domain to a certain extent, we adopt a silent living detection method based on the auxiliary supervision of Fourier spectrum. The model architecture consists of the main classification branch and the auxiliary supervision branch of Fourier spectrum
+## Introduction
 
+This project is designed to perform face detection and antispoofing on input images or video streams. Additionally, it utilizes sockets to emit the results, allowing seamless integration with other applications.
 
+## Features
 
-Test Method :
-All the test images must be collected by camera, otherwise it does not conform to the normal scene usage specification, and the algorithm effect cannot be guaranteed.
-Because the robustness of RGB silent living detection depending on camera model and scene, the actual use experience could be different.
-During the test, it should be ensured that a complete face appears in the view, and the rotation angle and vertical direction of the face are less than 30 degrees (in line with the normal face recognition scene), otherwise, the experience will be affected.　
+- Face Detection: Identify and locate faces in images or video streams.
+- Antispoofing: Detect and prevent spoofing attempts, ensuring the authenticity of faces.
+- Socket Emission: Emit results via sockets for easy integration with other systems.
 
+## Prerequisites
 
+Ensure you have the following prerequisites installed on your system:
 
-++++Run Project On Local Machine++++
-- pip install -r requirements.txt 
-+++ run the test file +++
-- pyhton3 test.py
-- python3 spoofing_face_match_application.py
+- Python (version >= 3.x)
+- Required Python packages (listed in `requirements.txt`)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+## run on local machine
+python3 spoofing_face_match_application.py 
