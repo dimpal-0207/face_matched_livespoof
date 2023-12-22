@@ -30,8 +30,8 @@ class Detection:
         dirname = os.path.dirname(stack[-2].filename)
         caffemodel = os.path.join(dirname, '..', 'resources','detection_model', 'Widerface-Retinaface.caffemodel')
         deploy = os.path.join(dirname, '..', 'resources', 'detection_model', 'deploy.prototxt')
-        # caffemodel = "./resources/detection_model/Widerface-RetinaFace.caffemodel"
-        # deploy = "./resources/detection_model/deploy.prototxt"
+        caffemodel = "./resources/detection_model/Widerface-RetinaFace.caffemodel"
+        deploy = "./resources/detection_model/deploy.prototxt"
         self.detector = cv2.dnn.readNetFromCaffe(deploy, caffemodel)
         self.detector_confidence = 0.6
 

@@ -3,6 +3,8 @@
 import base64
 import datetime
 import logging
+import os
+
 import boto3
 import cv2
 import face_recognition
@@ -17,12 +19,16 @@ import time
 from test import test
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(level=logging.INFO)
+# log_file_path = "file.log"  # Specify the desired log file path
+logging.basicConfig(level=logging.INFO, filename="logs.log", filemode="a", format="%(levelname)s:%(name)s:%(message)s")
+logger = logging.getLogger()  # G
 
-# Initialize Flask app and SocketIO
+
+
 app = Flask(__name__)
 CORS(app)
-socketio = SocketIO(app, ping_timeout=60000, ping_interval=20000)
+socketio = SocketIO(app, ping_interval=10000, ping_timeout=5000, reconnection=True, cors_allowed_origins="*", cookie=False)
 
 # AWS S3 credentials
 AWS_ACCESS_KEY = config("AWS_ACCESS_KEY")
@@ -41,7 +47,7 @@ image_database = {}
 for obj in response_.get('Contents', []):
     object_key = obj['Key']
     if object_key.lower().endswith(('.png', '.jpg', '.jpeg')):
-        print(f"Processing Image File: {object_key}")
+        # print(f"Processing Image File: {object_key}")
 
         # Download the image
         local_image_path = f"{object_key}"
@@ -65,7 +71,7 @@ video_capture = cv2.VideoCapture(0)
 
 @app.route('/')
 def index():
-    return "<h2>welcome to facedetection server for crest </h2>"
+    return render_template("index.html")
 
 # Event handler for client connection
 
@@ -88,9 +94,13 @@ def handle_disconnect():
 
 @socketio.on('stream_frame')
 def handle_webcam_frame(data):
+    print("======================================>")
+    print("===data", data)
+    print("========================================>")
     try:
         # Decode the base64 encoded image
         frame_data = data.split(',')[1]
+        # print("===>frame", frame_data)
         binary_data = base64.b64decode(frame_data)
         frame_np = None  # Set a default value before the 'try' block
         frameArray = np.frombuffer(binary_data, dtype=np.uint8)
@@ -100,11 +110,19 @@ def handle_webcam_frame(data):
         except Exception as e:
             print(f"Error decoding frame: {e}")
 
+        # Get the directory of the current script
+
+        script_directory = os.path.dirname(os.path.abspath(__file__))
+        print("scriptpath", script_directory)
+        # Construct the dynamic path relative to the script's location
+
+        resources_directory = os.path.join(script_directory, "resources", "anti_spoof_models")
+        print("===resou", resources_directory)
         # Check if 'frame_np' is not None before using it
         if frame_np is not None:
             # Perform anti-spoofing test using the 'test' function
             label, confidence = test(image=frame_np,
-                                model_dir=r"C:\Users\Admin\PycharmProjects\Facedetection_matched_ML\resources\anti_spoof_models",
+                                model_dir=resources_directory,
                                 device_id=0)
             # logging.info("===>lable: %s", label)
             # logging.info("===>confidence : %s", confidence)
@@ -151,6 +169,30 @@ if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0" ,debug=True, port=5001)
     video_capture.release()
     cv2.destroyAllWindows()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

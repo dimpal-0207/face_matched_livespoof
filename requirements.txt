@@ -4,7 +4,7 @@ boto3==1.29.6
 botocore==1.32.6
 click==8.1.4
 colorama==0.4.6
-dlib @ https://github.com/jloh02/dlib/releases/download/v19.22/dlib-19.22.99-cp310-cp310-win_amd64.whl#sha256=f2181b6724669fb0147c9ebc326d72b94de41bced1812eff5df4b133b5d0b575
+dlib @ https://github.com/jloh02/dlib/releases/download/v19.22/dlib-19.22.99-cp310-cp310-win_amd64.whbl#sha256=f2181b6724669fb0147c9ebc326d72b94de41ced1812eff5df4b133b5d0b575
 dnspython==2.4.2
 docopt==0.6.2
 eventlet==0.33.3
