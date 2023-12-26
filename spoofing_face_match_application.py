@@ -177,8 +177,6 @@ def handle_webcam_frame(data):
         socketio.emit('error', {'message': str(e)}, room=user_id)
         logging.error(f"Error: {e}")
 
-
-
 # Main entry point
 if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0" ,debug=True, port=5001)

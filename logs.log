@@ -842,3 +842,23 @@ INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedete
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:Client connected
+ERROR:root:Error: Invalid data format
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Client disconnected
