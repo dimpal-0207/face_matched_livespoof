@@ -862,3 +862,16 @@ INFO:root:Name: dimpal
 INFO:root:Name: dimpal
 INFO:root:Name: dimpal
 INFO:root:Client disconnected
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User SLJ9fu8CTq0zy363AAAB connected
+ERROR:root:Error: Invalid data format
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:User SLJ9fu8CTq0zy363AAAB disconnected

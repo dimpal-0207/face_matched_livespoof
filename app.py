@@ -32,40 +32,35 @@ FOLDER_NAME = config("FOLDER_NAME")
 
 # Initialize AWS S3 client
 s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
+# Initialize AWS S3 client
+# s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
+
+# List objects in the specified folder
+response_ = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix=FOLDER_NAME)
+image_database = {}
+
+# Iterate over objects in the folder
+for obj in response_.get('Contents', []):
+    object_key = obj['Key']
+    if object_key.lower().endswith(('.png', '.jpg', '.jpeg')):
+        # print(f"Processing Image File: {object_key}")
+
+        # Download the image
+        local_image_path = f"{object_key}"
+        s3.download_file(BUCKET_NAME, object_key, local_image_path)
+
+        # Load image and extract face encoding
+        image = face_recognition.load_image_file(local_image_path)
+        face_encoding = face_recognition.face_encodings(image)[0]  # Assuming there is only one face in each image
+
+        # Extract the name from the object key (customize based on your naming conventions)
+        face_name = object_key.split('/')[-1].split('.')[0]
+
+        # Add face encoding to the image_database
+        image_database[face_name] = face_encoding
 
 # Specify the target filename
-target_filename = "dimpal.png"
 
-try:
-    # Check if the object (file) exists in the S3 bucket
-    s3.head_object(Bucket=BUCKET_NAME, Key=os.path.join(FOLDER_NAME, target_filename))
-
-    # If the object exists, proceed with processing
-    print(f"Processing Image File: {target_filename}")
-
-    # Create a directory for images if it doesn't exist
-    image_folder = "images"
-    os.makedirs(image_folder, exist_ok=True)
-
-    # Download the image
-    local_image_path = os.path.join(image_folder, target_filename)
-    s3.download_file(BUCKET_NAME, os.path.join(FOLDER_NAME, target_filename), local_image_path)
-
-    # Load image and extract face encoding (replace this with your actual processing logic)
-    image = face_recognition.load_image_file(local_image_path)
-    face_encoding = face_recognition.face_encodings(image)[0]  # Assuming there is only one face in the image
-
-    # Extract the name from the object key (customize based on your naming conventions)
-    face_name = target_filename.split('.')[0]
-
-    # Add face encoding to the image_database
-    image_database = {face_name: face_encoding}
-
-except botocore.exceptions.ClientError as e:
-    if e.response['Error']['Code'] == '404':
-        print(f"Error: The object {os.path.join(FOLDER_NAME, target_filename)} does not exist in the S3 bucket.")
-    else:
-        print(f"Error: {e}")
 # OpenCV setup for live face detection
 video_capture = cv2.VideoCapture(0)
 
@@ -236,29 +231,3 @@ if __name__ == '__main__':
 #         logging.error(f"Error: {e}")
 
 
-# Initialize AWS S3 client
-# s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
-
-# List objects in the specified folder
-# response_ = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix=FOLDER_NAME)
-# image_database = {}
-#
-# # Iterate over objects in the folder
-# for obj in response_.get('Contents', []):
-#     object_key = obj['Key']
-#     if object_key.lower().endswith(('.png', '.jpg', '.jpeg')):
-#         # print(f"Processing Image File: {object_key}")
-#
-#         # Download the image
-#         local_image_path = f"{object_key}"
-#         s3.download_file(BUCKET_NAME, object_key, local_image_path)
-#
-#         # Load image and extract face encoding
-#         image = face_recognition.load_image_file(local_image_path)
-#         face_encoding = face_recognition.face_encodings(image)[0]  # Assuming there is only one face in each image
-#
-#         # Extract the name from the object key (customize based on your naming conventions)
-#         face_name = object_key.split('/')[-1].split('.')[0]
-#
-#         # Add face encoding to the image_database
-#         image_database[face_name] = face_encoding
