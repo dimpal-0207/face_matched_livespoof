@@ -14,6 +14,8 @@ from decouple import config
 import time
 
 # Import the 'test' function from your existing code
+from numpy import size
+
 from test import test
 
 # Configure logging
@@ -29,35 +31,84 @@ AWS_ACCESS_KEY = config("AWS_ACCESS_KEY")
 AWS_SECRET_KEY = config("AWS_SECRET_KEY")
 BUCKET_NAME = config("BUCKET_NAME")
 FOLDER_NAME = config("FOLDER_NAME")
+TARGET_FILENAME = "dimpal.png"
 
-# Initialize AWS S3 client
-s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
-# Initialize AWS S3 client
-# s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
 
-# List objects in the specified folder
-response_ = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix=FOLDER_NAME)
-image_database = {}
+def process_s3_image(aws_access_key, aws_secret_key, bucket_name, folder_name, target_filename):
+    try:
+        # Initialize AWS S3 client
+        s3 = boto3.client('s3', aws_access_key_id=aws_access_key, aws_secret_access_key=aws_secret_key)
 
-# Iterate over objects in the folder
-for obj in response_.get('Contents', []):
-    object_key = obj['Key']
-    if object_key.lower().endswith(('.png', '.jpg', '.jpeg')):
-        # print(f"Processing Image File: {object_key}")
+        # Check if the object (file) exists in the S3 bucket
+        s3.head_object(Bucket=bucket_name, Key=os.path.join(folder_name, target_filename))
+
+        # If the object exists, proceed with processing
+        # print(f"Processing Image File: {target_filename}")
+
+        # Create a directory for images if it doesn't exist
+        image_folder = "images"
+        os.makedirs(image_folder, exist_ok=True)
 
         # Download the image
-        local_image_path = f"{object_key}"
-        s3.download_file(BUCKET_NAME, object_key, local_image_path)
+        local_image_path = os.path.join(image_folder, target_filename)
+        print("===local", local_image_path)
+        s3.download_file(bucket_name, os.path.join(folder_name, target_filename), local_image_path)
 
-        # Load image and extract face encoding
+        # Load image and extract face encoding (replace this with your actual processing logic)
         image = face_recognition.load_image_file(local_image_path)
-        face_encoding = face_recognition.face_encodings(image)[0]  # Assuming there is only one face in each image
-
+        # print("===imagetype", image)
+        face_encoding = face_recognition.face_encodings(image)[0]  # Assuming there is only one face in the image
+        # print("===face_encoding", face_encoding)
+        # print("===face_encodingtype", type(face_encoding))
         # Extract the name from the object key (customize based on your naming conventions)
-        face_name = object_key.split('/')[-1].split('.')[0]
-
+        face_name = target_filename.split('.')[0]
+        # print("===face_name", face_name)
         # Add face encoding to the image_database
-        image_database[face_name] = face_encoding
+        image_database = {face_name: face_encoding}
+
+        # print("===image_database", type(image_database))
+        return image_database
+
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == '404':
+            print(f"Error: The object {os.path.join(folder_name, target_filename)} does not exist in the S3 bucket.")
+        else:
+            print(f"Error: {e}")
+        return {}
+
+
+# Example usage
+image_database = process_s3_image(AWS_ACCESS_KEY, AWS_SECRET_KEY, BUCKET_NAME, FOLDER_NAME, TARGET_FILENAME)
+# print("Image Database:", list(image_database.values()))
+
+# Initialize AWS S3 client
+# s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
+# # Initialize AWS S3 client
+# # s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
+#
+# # List objects in the specified folder
+# response_ = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix=FOLDER_NAME)
+# image_database = {}
+#
+# # Iterate over objects in the folder
+# for obj in response_.get('Contents', []):
+#     object_key = obj['Key']
+#     if object_key.lower().endswith(('.png', '.jpg', '.jpeg')):
+#         # print(f"Processing Image File: {object_key}")
+#
+#         # Download the image
+#         local_image_path = f"{object_key}"
+#         s3.download_file(BUCKET_NAME, object_key, local_image_path)
+#
+#         # Load image and extract face encoding
+#         image = face_recognition.load_image_file(local_image_path)
+#         face_encoding = face_recognition.face_encodings(image)[0]  # Assuming there is only one face in each image
+#
+#         # Extract the name from the object key (customize based on your naming conventions)
+#         face_name = object_key.split('/')[-1].split('.')[0]
+#
+#         # Add face encoding to the image_database
+#         image_database[face_name] = face_encoding
 
 # Specify the target filename
 
@@ -69,11 +120,19 @@ video_capture = cv2.VideoCapture(0)
 def index():
     return render_template("index.html")
 
+
 # Event handler for client connection
 @socketio.on('connect')
 def handle_connect(user_id):
     user_id = request.sid  # Assign a unique user ID based on the SocketIO session ID
     logging.info(f"User {user_id} connected")
+
+
+@socketio.on('message')
+def handle_message(msg):
+    print('Received message:', msg)
+    msg = "abcd"
+    socketio.emit('message', msg)
 
 
 # Event handler for client disconnection
@@ -82,14 +141,13 @@ def handle_disconnect():
     user_id = request.sid
     logging.info(f"User {user_id} disconnected")
 
+
 @socketio.on('stream_frame')
 def handle_webcam_frame(data):
-    user_id = request.sid
-    print("===user_id", user_id)
     try:
         # Validate if the data is in the expected format
-        if not isinstance(data, str) or not data.startswith('data:image'):
-            raise ValueError('Invalid data format')
+        # if not isinstance(data, str) or not data.startswith('data:image'):
+        #     raise ValueError('Invalid data format')
 
         # Decode the base64 encoded image
         frame_data = data.split(',')[1]
@@ -123,7 +181,7 @@ def handle_webcam_frame(data):
                 face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
 
                 # Initialize result dictionary
-                result = {'matched': False, 'name': 'Unknown', 'message': 'please provide real face '}
+                result = {'matched': False, 'name': 'Unknown', 'message': 'not matching face with the DB stored image'}
 
                 for face_encoding in face_encodings:
                     # Check for face match with images in the image_database
@@ -138,18 +196,18 @@ def handle_webcam_frame(data):
                         break
 
                 # Emit the results to the connected client
-                emit('face_recognition_result', result, room=user_id)
+                emit('face_recognition_result', result)
             else:
-                emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'message': 'not matching face with the DB stored image'}, room=user_id)
+                emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'message': 'please provide real face'})
                 logging.error("frame does not detect a proper face")
         else:
             # Emit an appropriate response to the client
-            emit('face_recognition_result', {'matched': False, 'name': 'Unknown','message': 'failed to detect the face'}, room=user_id)
+            emit('face_recognition_result', {'matched': False, 'name': 'Unknown','message': 'failed to detect the face'})
             logging.error("frame does not detect a proper face")
 
     except Exception as e:
         # Emit an error response to the client
-        emit('error', {'message': str(e)}, room=user_id)
+        emit('error', {'message': str(e)})
         logging.error(f"Error: {e}")
 
 # Main entry point+
@@ -157,6 +215,24 @@ if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0", debug=True, port=5001)
     video_capture.release()
     cv2.destroyAllWindows()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # @socketio.on('stream_frame')
 # def handle_webcam_frame(data):
