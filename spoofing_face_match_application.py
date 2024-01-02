@@ -29,11 +29,6 @@ app = Flask(__name__)
 CORS(app)
 socketio = SocketIO(app, ping_interval=10000, ping_timeout=5000, reconnection=True, cors_allowed_origins="*", cookie=False)
 
-# AWS S3 credentials
-AWS_ACCESS_KEY = config("AWS_ACCESS_KEY")
-AWS_SECRET_KEY = config("AWS_SECRET_KEY")
-BUCKET_NAME = config("BUCKET_NAME")
-FOLDER_NAME = config("FOLDER_NAME")
 
 video_capture = cv2.VideoCapture(0)
 
