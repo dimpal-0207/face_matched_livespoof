@@ -179,24 +179,27 @@ def handle_webcam_frame(data):
                 # Detect faces in the frame
                 face_locations = face_recognition.face_locations(rgb_frame)
                 face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
+                # print("===lenoffaceencoding", len(face_encodings))
+                if len(face_encodings) == 1:
+                    # Initialize result dictionary
+                    result = {'matched': False, 'name': 'Unknown', 'message': 'not matching face with the DB stored image'}
 
-                # Initialize result dictionary
-                result = {'matched': False, 'name': 'Unknown', 'message': 'not matching face with the DB stored image'}
+                    for face_encoding in face_encodings:
+                        # Check for face match with images in the image_database
+                        matches = face_recognition.compare_faces(list(image_database.values()), face_encoding)
 
-                for face_encoding in face_encodings:
-                    # Check for face match with images in the image_database
-                    matches = face_recognition.compare_faces(list(image_database.values()), face_encoding)
+                        # If a match is found, update the result dictionary
+                        if True in matches:
+                            first_match_index = matches.index(True)
+                            name = list(image_database.keys())[first_match_index]
+                            logging.info("Name: %s", name)
+                            result = {'matched': True, 'name': name, 'message': 'Match Found!'}
+                            break
 
-                    # If a match is found, update the result dictionary
-                    if True in matches:
-                        first_match_index = matches.index(True)
-                        name = list(image_database.keys())[first_match_index]
-                        logging.info("Name: %s", name)
-                        result = {'matched': True, 'name': name, 'message': 'Match Found!'}
-                        break
-
-                # Emit the results to the connected client
-                emit('face_recognition_result', result)
+                    # Emit the results to the connected client
+                    emit('face_recognition_result', result)
+                else:
+                    emit('face_recognition_result',{'matched': False, 'message': 'There are multiple faces in frame'})
             else:
                 emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'message': 'please provide real face'})
                 logging.error("frame does not detect a proper face")
@@ -209,6 +212,60 @@ def handle_webcam_frame(data):
         # Emit an error response to the client
         emit('error', {'message': str(e)})
         logging.error(f"Error: {e}")
+
+# @socketio.on('stream_frame')
+# def handle_webcam_frame(data):
+#     global processing_face
+#
+#     try:
+#         if processing_face:
+#             return  # Ignore new frames if a face is already being processed
+#
+#         processing_face = True  # Set the flag to indicate face processing is in progress
+#
+#         frame_data = data.split(',')[1]
+#         binary_data = base64.b64decode(frame_data)
+#         frame_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
+#
+#         script_directory = os.path.dirname(os.path.abspath(__file__))
+#         resources_directory = os.path.join(script_directory, "resources", "anti_spoof_models")
+#
+#         if frame_np is not None:
+#             label, confidence = test(image=frame_np, model_dir=resources_directory, device_id=0)
+#             spoofing_threshold = 0.5
+#
+#             if label == 1 and confidence > spoofing_threshold:
+#                 rgb_frame = cv2.cvtColor(frame_np, cv2.COLOR_BGR2RGB)
+#                 face_locations = face_recognition.face_locations(rgb_frame)
+#                 face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
+#
+#                 result = {'matched': False, 'name': 'Unknown', 'message': 'not matching face with the DB stored image'}
+#
+#                 if len(face_encodings) == 1:  # Ensure only one face is detected
+#                     for face_encoding in face_encodings:
+#                         matches = face_recognition.compare_faces(list(image_database.values()), face_encoding)
+#
+#                         if True in matches:
+#                             first_match_index = matches.index(True)
+#                             name = list(image_database.keys())[first_match_index]
+#                             logging.info("Name: %s", name)
+#                             result = {'matched': True, 'name': name, 'message': 'Match Found!'}
+#                             break
+#
+#                 socketio.emit('face_recognition_result', result)
+#             else:
+#                 socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'message': 'please provide real face'})
+#                 logging.error("frame does not detect a proper face")
+#         else:
+#             socketio.emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'message': 'failed to detect the face'})
+#             logging.error("frame does not detect a proper face")
+#
+#     except Exception as e:
+#         socketio.emit('error', {'message': str(e)})
+#         logging.error(f"Error: {e}")
+#     finally:
+#         processing_face = False  #
+
 
 # Main entry point+
 if __name__ == '__main__':

@@ -2,3 +2,327 @@ INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedete
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:Client connected
+INFO:root:Client connected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E2886A9D80>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E28CA900D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E28CA92A70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E28CA93670>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E28CAA42B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E28CA92C50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E28CA92080>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E2943B3580>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E2943B24A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:Client disconnected
+INFO:root:Client disconnected
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E2942E12A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E294338FA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E294341600>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E2943403A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:Client disconnected
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200F9D99B70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200F9D99A20>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200FF4850C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:Error: HTTPConnectionPool(host='192.168.1.12', port=5005): Max retries exceeded with url: /api/auth/user-profile-image/658c11030819c8b0feea0fa4 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200FF456680>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+ERROR:root:please provide real face
+INFO:root:Client disconnected
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Client disconnected
+INFO:root:Client connected
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:userid_data: 658c11030819c8b0feea0fa4
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}

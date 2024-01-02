@@ -21,8 +21,6 @@ import time
 from test import test
 
 # Configure logging
-# logging.basicConfig(level=logging.INFO)
-# log_file_path = "file.log"  # Specify the desired log file path
 logging.basicConfig(level=logging.INFO, filename="file.log", filemode="a", format="%(levelname)s:%(name)s:%(message)s")
 logger = logging.getLogger()  # G
 list_connected_sockets = []
@@ -39,22 +37,21 @@ FOLDER_NAME = config("FOLDER_NAME")
 
 video_capture = cv2.VideoCapture(0)
 
-# Route for rendering the index.html file
 
 # Decode base64 image and create a face encoding for the image
-
-
 def decode_and_encode_base64_image(base64_data):
     binary_data = base64.b64decode(base64_data)
     image_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
     face_encoding = face_recognition.face_encodings(image_np)
     return face_encoding[0] if face_encoding else None
 
+
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return "<h3>Welcome to Facedetection App</h3>"
 
 # Event handler for client connection
+
 
 image_database = {}
 
@@ -68,14 +65,15 @@ def handle_connect():
 @socketio.on('join_Room')
 def joinroom(data):
     logging.info("userid_data: %s", data)
+    print("===data", data)
     global image_database
     try:
         # Hit the API with the userid
-        api_url = f"http://192.168.1.12:5005/api/auth/user-profile-image/{data}"
-        print("===api_url", api_url)
+        # api_url = f"http://192.168.1.6:5007/api/auth/user-profile-image/{data}" #for local
+        api_url = f"http://3.111.167.55:6001/api/auth/user-profile-image/{data}" # for live api url
         # payload = {'user_id': user_id}
         response = requests.get(api_url)
-        # print("===response", response)
+        print("===response", response)
         # Check the API response and perform actions accordingly
         if response.status_code == 200:
             api_data = response.json()  # Assuming the API returns JSON data
@@ -91,7 +89,6 @@ def joinroom(data):
         logging.error(f"Error: {e}")
 
 
-
 @socketio.on('disconnect')
 def handle_disconnect():
     logging.info("Client disconnected")
@@ -102,10 +99,6 @@ def handle_disconnect():
 @socketio.on('stream_frame')
 def handle_webcam_frame(data):
     try:
-        # Validate if the data is in the expected format
-        # if not isinstance(data, str) or not data.startswith('data:image'):
-        #     raise ValueError('Invalid data format')
-
         # Decode the base64 encoded image
         frame_data = data
         binary_data = base64.b64decode(frame_data)
@@ -143,8 +136,6 @@ def handle_webcam_frame(data):
                 for face_encoding in face_encodings:
                     # Check for face match with images in the image_database
                     matches = face_recognition.compare_faces(list(image_database.values()), face_encoding)
-                    # print("====inside streaming", list(image_database.values()))
-                    # print("====>faceencodings live", face_encoding)
                     # If a match is found, update the result dictionary
                     if True in matches:
                         first_match_index = matches.index(True)
@@ -157,7 +148,7 @@ def handle_webcam_frame(data):
                 socketio.emit('face_recognition_result', result)
             else:
                 socketio.emit('face_recognition_result', {'matched': False,'message': 'please provide real face'})
-                logging.error("frame does not detect a proper face")
+                logging.error("please provide real face")
         else:
             # Emit an appropriate response to the client
             socketio.emit('face_recognition_result', {'matched': False,'message': 'failed to detect the face'})
@@ -168,7 +159,10 @@ def handle_webcam_frame(data):
         socketio.emit('error', {'message': str(e)})
         logging.error(f"Error: {e}")
 
+
 # Main entry point
+
+
 if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0" ,debug=True, port=5001)
     video_capture.release()
