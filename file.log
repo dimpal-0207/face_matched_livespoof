@@ -174,3 +174,797 @@ INFO:root:userid_data: 658c10d2da185563578215d3
 INFO:root:userid_data: 658c10d2da185563578215d3
 INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
 INFO:root:Client disconnected
+2024-01-05 15:01:48,415INFO:werkzeug: * Restarting with stat
+2024-01-05 15:01:54,260WARNING:werkzeug: * Debugger is active!
+2024-01-05 15:01:54,265INFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:01:54,787INFO:root:Client connected
+2024-01-05 15:01:54,832INFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 15:01:55,145INFO:root:response: <Response [200]>
+2024-01-05 15:01:55,333ERROR:root:Error: list index out of range
+2024-01-05 15:01:55,388INFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 15:01:55,583INFO:root:response: <Response [200]>
+2024-01-05 15:01:55,764ERROR:root:Error: list index out of range
+2024-01-05 15:07:10,861INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:07:11,260INFO:werkzeug: * Restarting with stat
+2024-01-05 15:10:29 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:10:36 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:10:36 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:10:41 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:10:42 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:10:48 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:10:48 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:13:15 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:13:15 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:13:21 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:13:21 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:27:13 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:27:13 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:27:20 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:27:20 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:28:41 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:28:41 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:28:47 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:28:48 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:33:31 India Standard TimeINFO:root:Client connected
+2024-01-05 15:33:31 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 15:33:31 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 15:33:32 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 15:33:32 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 15:33:32 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 15:33:32 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 15:33:36 India Standard TimeINFO:root:Client disconnected
+2024-01-05 15:42:20 India Standard TimeINFO:root:Client connected
+2024-01-05 15:42:20 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 15:42:21 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 15:42:21 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 15:42:21 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 15:42:21 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 15:42:21 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 15:42:35 India Standard TimeINFO:root:Client disconnected
+2024-01-05 15:49:32 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:49:32 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:49:38 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:49:38 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:53:04 India Standard TimeINFO:root:Client connected
+2024-01-05 15:53:04 India Standard TimeINFO:root:userid_data: null
+2024-01-05 15:53:05 India Standard TimeINFO:root:response: <Response [500]>
+2024-01-05 15:53:05 India Standard TimeINFO:root:userid_data: null
+2024-01-05 15:53:05 India Standard TimeINFO:root:response: <Response [500]>
+2024-01-05 15:53:05 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 15:57:04 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:57:04 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:57:13 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:57:19 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:57:19 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:57:22 India Standard TimeINFO:root:Client connected
+2024-01-05 15:57:23 India Standard TimeINFO:root:userid_data: null
+2024-01-05 15:57:23 India Standard TimeINFO:root:response: <Response [500]>
+2024-01-05 15:57:23 India Standard TimeINFO:root:userid_data: null
+2024-01-05 15:57:23 India Standard TimeINFO:root:response: <Response [500]>
+2024-01-05 15:57:59 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:57:59 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:58:05 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:58:05 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 15:58:10 India Standard TimeINFO:root:Client connected
+2024-01-05 15:58:10 India Standard TimeINFO:root:userid_data: null
+2024-01-05 15:58:10 India Standard TimeINFO:root:response: <Response [500]>
+2024-01-05 15:58:10 India Standard TimeINFO:root:userid_data: null
+2024-01-05 15:58:10 India Standard TimeINFO:root:response: <Response [500]>
+2024-01-05 15:59:12 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 15:59:12 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 15:59:19 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 15:59:19 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:00:32 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:00:32 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:00:38 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:00:38 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:01:16 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:01:16 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:01:22 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:01:22 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:05:30 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:05:36 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:05:36 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:06:12 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:06:12 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:06:18 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:06:18 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:22:18 India Standard TimeINFO:root:Client connected
+2024-01-05 16:22:18 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:22:18 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:22:19 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:22:19 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:22:19 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:22:20 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:22:30 India Standard TimeINFO:root:matches: 1
+2024-01-05 16:22:30 India Standard TimeINFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+2024-01-05 16:22:30 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:23:56 India Standard TimeINFO:root:Client connected
+2024-01-05 16:23:56 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:23:56 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:23:57 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:23:57 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:24:11 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:24:12 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:24:12 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:28:38 India Standard TimeINFO:root:Client connected
+2024-01-05 16:28:38 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:28:39 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:28:39 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:28:39 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:28:39 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:28:40 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:28:40 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:28:40 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:28:41 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:28:41 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:34:10 India Standard TimeINFO:root:Client connected
+2024-01-05 16:34:10 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:11 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:11 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:34:11 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:11 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:12 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:34:12 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:34:12 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:12 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:13 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:34:13 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:13 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:13 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:34:24 India Standard TimeINFO:root:Client connected
+2024-01-05 16:34:25 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:25 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:25 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:34:25 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:25 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:26 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:34:26 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:26 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:26 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:34:27 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:34:27 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:27 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:27 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:34:27 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:34:27 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:34:28 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:26 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:36:32 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:36:32 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:36:32 India Standard TimeINFO:root:Client connected
+2024-01-05 16:36:35 India Standard TimeINFO:root:Client connected
+2024-01-05 16:36:36 India Standard TimeINFO:root:Client connected
+2024-01-05 16:36:36 India Standard TimeINFO:root:Client connected
+2024-01-05 16:36:36 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:36 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:37 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:37 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:37 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:37 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:37 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:37 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:38 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:38 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:38 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:39 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:39 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:39 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:39 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:39 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:39 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:40 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:40 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:40 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:41 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:41 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:41 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:41 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:41 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:41 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:42 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:42 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:42 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:43 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:43 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:43 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:43 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:43 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:43 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:44 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:44 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:44 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:44 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:36:44 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:36:45 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:36:45 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:37:39 India Standard TimeINFO:root:Client connected
+2024-01-05 16:37:40 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:37:40 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:37:40 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:37:40 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:37:40 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:37:41 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:37:41 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:37:41 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:37:41 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:37:42 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:37:42 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:37:42 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:37:42 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:37:42 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:37:43 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:37:43 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:37:43 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:37:43 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:37:44 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:14 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:40:15 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:40:23 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:40:29 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:40:29 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:40:32 India Standard TimeINFO:root:Client connected
+2024-01-05 16:40:32 India Standard TimeINFO:root:Client connected
+2024-01-05 16:40:32 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:32 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:33 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:33 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:33 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:33 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:33 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:33 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:34 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:34 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:34 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:35 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:35 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:35 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:35 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:35 India Standard TimeINFO:root:Client connected
+2024-01-05 16:40:35 India Standard TimeINFO:root:Client connected
+2024-01-05 16:40:35 India Standard TimeINFO:root:Client connected
+2024-01-05 16:40:35 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:35 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:36 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:36 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:36 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:37 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:37 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:37 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:37 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:37 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:37 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:38 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:38 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:38 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:39 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:39 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:39 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:39 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:39 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:39 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:40 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:40 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:40 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:41 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:41 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:41 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:41 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:41 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:41 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:42 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:42 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:42 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:43 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:43 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:43 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:43 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:43 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:43 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:44 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:44 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:44 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:45 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:45 India Standard TimeINFO:root:userid_data: 658c10d2da185563578215d3
+2024-01-05 16:40:45 India Standard TimeINFO:root:response: <Response [200]>
+2024-01-05 16:40:45 India Standard TimeINFO:root:faceencoding of api face: 128
+2024-01-05 16:40:51 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:40:52 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:41:05 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:41:11 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:41:11 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:41:13 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:13 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:13 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:14 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:14 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:34 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:41:35 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:41:43 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:41:49 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:41:49 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:41:51 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:52 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:52 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:52 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:54 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:56 India Standard TimeINFO:root:Client connected
+2024-01-05 16:41:57 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:42:51 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:42:52 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:42:59 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:43:06 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:43:06 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:43:07 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:09 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:09 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:10 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:10 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:10 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:13 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:43:14 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:43:20 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:43:20 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:43:21 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:21 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:22 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:22 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:23 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:23 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:29 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:30 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:43:42 India Standard TimeINFO:root:Client connected
+2024-01-05 16:43:42 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:45:46 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:45:47 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:45:57 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:46:03 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:46:03 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:46:04 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:05 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:05 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:05 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:05 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:07 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:07 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:08 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:41 India Standard TimeINFO:root:Client connected
+2024-01-05 16:46:41 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:47:07 India Standard TimeINFO:root:Client connected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:48:08 India Standard TimeINFO:root:Client disconnected
+2024-01-05 16:50:09 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:50:10 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:50:20 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:50:26 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:50:26 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:51:21 India Standard TimeINFO:root:Client connected
+2024-01-05 16:51:22 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:52:44 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 16:52:44 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:53:33 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 16:53:39 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 16:53:39 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 16:53:43 India Standard TimeINFO:root:Client connected
+2024-01-05 16:55:43 India Standard TimeINFO:root:Client connected
+2024-01-05 16:55:44 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:56:52 India Standard TimeINFO:root:Client connected
+2024-01-05 16:56:52 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:58:32 India Standard TimeINFO:root:Client connected
+2024-01-05 16:58:32 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:58:33 India Standard TimeINFO:root:Client connected
+2024-01-05 16:58:33 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:58:33 India Standard TimeINFO:root:Client connected
+2024-01-05 16:58:33 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:58:34 India Standard TimeINFO:root:Client connected
+2024-01-05 16:58:34 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:58:34 India Standard TimeINFO:root:Client connected
+2024-01-05 16:58:34 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:58:35 India Standard TimeINFO:root:Client connected
+2024-01-05 16:58:35 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:58:44 India Standard TimeINFO:root:Client connected
+2024-01-05 16:58:44 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 16:58:45 India Standard TimeINFO:root:Client connected
+2024-01-05 16:58:45 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:00:50 India Standard TimeINFO:root:Client connected
+2024-01-05 17:00:50 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:00:55 India Standard TimeINFO:root:Client connected
+2024-01-05 17:00:55 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:00:56 India Standard TimeINFO:root:Client connected
+2024-01-05 17:00:56 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:00:57 India Standard TimeINFO:root:Client connected
+2024-01-05 17:00:57 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:00:57 India Standard TimeINFO:root:Client connected
+2024-01-05 17:00:57 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:00:58 India Standard TimeINFO:root:Client connected
+2024-01-05 17:00:58 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:00:58 India Standard TimeINFO:root:Client connected
+2024-01-05 17:00:58 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:01:08 India Standard TimeINFO:root:Client connected
+2024-01-05 17:01:08 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:01:19 India Standard TimeINFO:root:Client connected
+2024-01-05 17:01:20 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:01:57 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:02:05 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:02:11 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:02:11 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:02:11 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:12 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:12 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:12 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:12 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:14 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:14 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:14 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:14 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:14 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:15 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:15 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:15 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:15 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:15 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:16 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:16 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:16 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:16 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:16 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:26 India Standard TimeINFO:root:Client connected
+2024-01-05 17:02:27 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:04:22 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:04:22 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:04:31 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:04:37 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:04:37 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:04:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:04:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:01 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:05:07 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:05:07 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:05:08 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:08 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:08 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:08 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:08 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:09 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:09 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:09 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:09 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:09 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:09 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:09 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:09 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:10 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:11 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:11 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:11 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:12 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:12 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:12 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:12 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:18 India Standard TimeINFO:root:Client connected
+2024-01-05 17:05:19 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:07:32 India Standard TimeINFO:root:Client connected
+2024-01-05 17:07:32 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:08:37 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:08:42 India Standard TimeINFO:root:Client connected
+2024-01-05 17:08:42 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:08:59 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:09:10 India Standard TimeINFO:root:Client connected
+2024-01-05 17:09:21 India Standard TimeERROR:root:please provide real face
+2024-01-05 17:09:21 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:09:21 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:09:44 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:09:55 India Standard TimeINFO:root:Client connected
+2024-01-05 17:10:06 India Standard TimeINFO:root:matches: 0
+2024-01-05 17:10:06 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:10:49 India Standard TimeINFO:root:Client connected
+2024-01-05 17:10:49 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:11:09 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:12:07 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:12:08 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:12:16 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:12:22 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:12:22 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:12:22 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:24 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:24 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:24 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:24 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:24 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:24 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:24 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:24 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:25 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:25 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:25 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:25 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:25 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:25 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:25 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:25 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:26 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:26 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:26 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:26 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:26 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:26 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:26 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:53 India Standard TimeINFO:root:Client connected
+2024-01-05 17:12:53 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:14:37 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:14:37 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:14:43 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:14:43 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:14:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:44 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:44 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:44 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:44 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:44 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:46 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:46 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:47 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:47 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:47 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:47 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:47 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:48 India Standard TimeINFO:root:Client connected
+2024-01-05 17:14:48 India Standard TimeINFO:root:Client connected
+2024-01-05 17:16:04 India Standard TimeINFO:root:Client connected
+2024-01-05 17:16:05 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:17:44 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:17:44 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:17:50 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:17:50 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:17:50 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:50 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:51 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:52 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:52 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:52 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:52 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:52 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:52 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:52 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:53 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:54 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:54 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:55 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:55 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:55 India Standard TimeINFO:root:Client connected
+2024-01-05 17:17:55 India Standard TimeINFO:root:Client connected
+2024-01-05 17:18:11 India Standard TimeINFO:root:Client connected
+2024-01-05 17:18:12 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:19:02 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:19:02 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:19:12 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:19:18 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:19:18 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:19:18 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:18 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:18 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:18 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:18 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:19 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:19 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:19 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:19 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:21 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:23 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:19:38 India Standard TimeERROR:root:Error: list index out of range
+2024-01-05 17:20:24 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:20:25 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:20:34 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:20:40 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:20:40 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:20:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:42 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:42 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:42 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:42 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:42 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:42 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:43 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:44 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:20:45 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:20 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:29 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:23:30 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:23:36 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:23:36 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:23:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:23:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:29 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:25:30 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:25:36 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:25:36 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:25:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:37 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:38 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:39 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:40 India Standard TimeINFO:root:Client connected
+2024-01-05 17:25:41 India Standard TimeINFO:root:Client connected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:26:15 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:28:11 India Standard TimeINFO:root:Client connected
+2024-01-05 17:28:18 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:28:18 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:28:27 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:28:33 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:28:33 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:28:36 India Standard TimeINFO:root:Client connected
+2024-01-05 17:28:46 India Standard TimeINFO:root:Client connected
+2024-01-05 17:28:55 India Standard TimeINFO:root:Client connected
+2024-01-05 17:31:06 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:31:06 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:31:06 India Standard TimeINFO:root:Client disconnected
+2024-01-05 17:39:56 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:39:56 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:40:03 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:40:03 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:44:32 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:44:32 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:44:39 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:44:39 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-05 17:45:54 India Standard TimeINFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+2024-01-05 17:45:55 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-05 17:46:01 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-05 17:46:01 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297

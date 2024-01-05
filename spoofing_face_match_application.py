@@ -2,6 +2,9 @@
 import base64
 import logging
 import os
+from pytz import timezone
+
+
 import cv2
 import face_recognition
 import numpy as np
@@ -13,9 +16,10 @@ from flask_socketio import SocketIO
 
 # Import the 'test' function from your existing code
 from test import test
+indian_timezone = timezone('Asia/Kolkata')
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, filename="file.log", filemode="a", format="%(asctime)s%(levelname)s:%(name)s:%(message)s")
+logging.basicConfig(level=logging.INFO, filename="file.log", filemode="a", format="%(asctime)s%(levelname)s:%(name)s:%(message)s", datefmt="%Y-%m-%d %H:%M:%S %Z" ) # Customize the date format he)
 logger = logging.getLogger()  # G
 list_connected_sockets = []
 
@@ -38,6 +42,32 @@ image_database = {}
 def handle_connect():
     logging.info("Client connected")
     socketio.emit('connect', {'status': 'connected with server'})
+
+import dlib
+
+@socketio.on('get_face')
+def face_data(data):
+    print("====data", len(data))
+    try:
+        if data:
+            binary_data = base64.b64decode(data)
+            # print("===>binary", binary_data)
+            image_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
+            if image_np is not None:
+                face_encodings = face_recognition.face_encodings(image_np)
+                if face_encodings:
+                    # Assuming you want to emit for each detected face
+                    for face_encoding in face_encodings:
+                        # print("===>encode", len(face_encoding))
+                        logging.info('encode len  of facedata: %s', len(face_encoding))
+                        socketio.emit('get_face', {"status": 200, 'message': 'Face Detected!'})
+                else:
+                    logging.info('encode len  of facedata: %s', "Not get face encodings")
+                    socketio.emit('get_face', {"status": 400, 'message': 'Please upload a proper face image'})
+        else:
+            socketio.emit('get_face', {"status": 400,'message': 'Not received face data'})
+    except Exception as e:
+        logging.error(f"Error: {e}")
 
 
 @socketio.on('join_Room')

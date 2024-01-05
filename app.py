@@ -7,6 +7,7 @@ import botocore
 import cv2
 import face_recognition
 import numpy as np
+import requests
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit
@@ -110,6 +111,8 @@ def handle_message(msg):
 def handle_disconnect():
     user_id = request.sid
     logging.info(f"User {user_id} disconnected")
+
+
 
 
 @socketio.on('stream_frame')
