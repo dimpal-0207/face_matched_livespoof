@@ -1,0 +1,570 @@
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User h5ZRhZhEajmVAQN2AAAB connected
+ERROR:root:frame does not detect a proper face
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (586877) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (576217) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (576689) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (528049) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (549737) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (562861) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (567625) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (564897) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (581245) cannot be 1 more than a multiple of 4
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User IQlrBzDl78lEAHkhAAAB connected
+ERROR:root:frame does not detect a proper face
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (598525) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (581693) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (582225) cannot be 1 more than a multiple of 4
+ERROR:root:Error: Incorrect padding
+ERROR:root:Error: Invalid base64-encoded string: number of data characters (577637) cannot be 1 more than a multiple of 4
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User u22CCIuSovM4uwu0AAAB connected
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User 9U3JInGBoJnY75ABAAAB connected
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User cIy_q6qqb0a9vjpRAAAB connected
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User VHoeArDLmWsEybuuAAAB connected
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:User VHoeArDLmWsEybuuAAAB disconnected
+INFO:root:User IMQ8Q9C9Qe6_BkSwAAAD connected
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User ZIHiVsXCIOP90D9TAAAB connected
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User cSyvG1Cn_QqLw4z8AAAB connected
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+ERROR:root:please provide real face
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+INFO:root:Name: {'matched': True, 'message': 'Match Found!'}
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User p9a6G9VDI6LmUZrLAAAB connected
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User Pbae_GHRpe9Rmi7qAAAB connected
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User qas2dsR7aHYzXF9lAAAB connected
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+ERROR:root:frame does not detect a proper face
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:werkzeug: * Detected change in 'C:\\Users\\Admin\\PycharmProjects\\Facedetection_matched_ML\\spoofing_face_match_application.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 801-066-297
+INFO:root:User ZT5ISS1fsT6ae2IwAAAB connected
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+INFO:root:Name: dimpal
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-239-163
+INFO:werkzeug: * Restarting with stat

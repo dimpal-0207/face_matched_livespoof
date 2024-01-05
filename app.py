@@ -11,15 +11,16 @@ from flask import Flask, render_template, request
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit
 from decouple import config
-import time
+from datetime import datetime, timezone, timedelta
 
 # Import the 'test' function from your existing code
 from numpy import size
-
+from cachetools import TTLCache
 from test import test
+india_time_zone = timezone(timedelta(hours=5, minutes=30))
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, filename="logs.log", filemode="a", format="%(levelname)s:%(name)s:%(message)s")
+logging.basicConfig(level=logging.INFO, filename="logs.log", filemode="a", format="%(asctime)s - %(levelname)s - %(name)s - %(message)s")
 logger = logging.getLogger()
 
 app = Flask(__name__)
@@ -76,41 +77,10 @@ def process_s3_image(aws_access_key, aws_secret_key, bucket_name, folder_name, t
             print(f"Error: {e}")
         return {}
 
-
+anti_spoof_cache = TTLCache(maxsize=100, ttl=60)  # Cache anti-spoofing test results for 60 seconds
 # Example usage
 image_database = process_s3_image(AWS_ACCESS_KEY, AWS_SECRET_KEY, BUCKET_NAME, FOLDER_NAME, TARGET_FILENAME)
 # print("Image Database:", list(image_database.values()))
-
-# Initialize AWS S3 client
-# s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
-# # Initialize AWS S3 client
-# # s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
-#
-# # List objects in the specified folder
-# response_ = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix=FOLDER_NAME)
-# image_database = {}
-#
-# # Iterate over objects in the folder
-# for obj in response_.get('Contents', []):
-#     object_key = obj['Key']
-#     if object_key.lower().endswith(('.png', '.jpg', '.jpeg')):
-#         # print(f"Processing Image File: {object_key}")
-#
-#         # Download the image
-#         local_image_path = f"{object_key}"
-#         s3.download_file(BUCKET_NAME, object_key, local_image_path)
-#
-#         # Load image and extract face encoding
-#         image = face_recognition.load_image_file(local_image_path)
-#         face_encoding = face_recognition.face_encodings(image)[0]  # Assuming there is only one face in each image
-#
-#         # Extract the name from the object key (customize based on your naming conventions)
-#         face_name = object_key.split('/')[-1].split('.')[0]
-#
-#         # Add face encoding to the image_database
-#         image_database[face_name] = face_encoding
-
-# Specify the target filename
 
 # OpenCV setup for live face detection
 video_capture = cv2.VideoCapture(0)
@@ -161,14 +131,14 @@ def handle_webcam_frame(data):
             print(f"Error decoding frame: {e}")
 
         # Get the directory of the current script
-        script_directory = os.path.dirname(os.path.abspath(__file__))
-        # Construct the dynamic path relative to the script's location
-        resources_directory = os.path.join(script_directory, "resources", "anti_spoof_models")
+        # script_directory = os.path.dirname(os.path.abspath(__file__))
+        # # Construct the dynamic path relative to the script's location
+        # resources_directory = os.path.join(script_directory, "resources", "anti_spoof_models")
 
         # Check if 'frame_np' is not None before using it
         if frame_np is not None:
             # Perform anti-spoofing test using the 'test' function
-            label, confidence = test(image=frame_np, model_dir=resources_directory, device_id=0)
+            label, confidence = test(image=frame_np, model_dir=os.path.join("resources", "anti_spoof_models"), device_id=0)
 
             spoofing_threshold = 0.5
 
@@ -212,6 +182,13 @@ def handle_webcam_frame(data):
         # Emit an error response to the client
         emit('error', {'message': str(e)})
         logging.error(f"Error: {e}")
+
+
+# Main entry point
+if __name__ == '__main__':
+    socketio.run(app, host="0.0.0.0", debug=True, port=5001)
+    video_capture.release()
+    cv2.destroyAllWindows()
 
 # @socketio.on('stream_frame')
 # def handle_webcam_frame(data):
