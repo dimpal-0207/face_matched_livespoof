@@ -112,84 +112,190 @@ def handle_disconnect():
     user_id = request.sid
     logging.info(f"User {user_id} disconnected")
 
-
-
+match_found = False
 
 @socketio.on('stream_frame')
 def handle_webcam_frame(data):
+    global match_found  # Declare the flag as a global variable
     try:
-        # Validate if the data is in the expected format
-        # if not isinstance(data, str) or not data.startswith('data:image'):
-        #     raise ValueError('Invalid data format')
-
-        # Decode the base64 encoded image
         frame_data = data.split(',')[1]
         binary_data = base64.b64decode(frame_data)
-        frame_np = None  # Set a default value before the 'try' block
-        frameArray = np.frombuffer(binary_data, dtype=np.uint8)
+        frame_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
 
-        try:
-            frame_np = cv2.imdecode(frameArray, cv2.IMREAD_COLOR)
-        except Exception as e:
-            print(f"Error decoding frame: {e}")
-
-        # Get the directory of the current script
-        # script_directory = os.path.dirname(os.path.abspath(__file__))
-        # # Construct the dynamic path relative to the script's location
-        # resources_directory = os.path.join(script_directory, "resources", "anti_spoof_models")
-
-        # Check if 'frame_np' is not None before using it
         if frame_np is not None:
-            # Perform anti-spoofing test using the 'test' function
             label, confidence = test(image=frame_np, model_dir=os.path.join("resources", "anti_spoof_models"), device_id=0)
-
             spoofing_threshold = 0.5
 
             if label == 1 and confidence > spoofing_threshold:
-                # Proceed with face recognition if not spoofed
                 rgb_frame = cv2.cvtColor(frame_np, cv2.COLOR_BGR2RGB)
-
-                # Detect faces in the frame
                 face_locations = face_recognition.face_locations(rgb_frame)
-                face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
-                # print("===lenoffaceencoding", len(face_encodings))
-                if len(face_encodings) == 1:
-                    # Initialize result dictionary
-                    result = {'matched': False, 'name': 'Unknown', 'message': 'not matching face with the DB stored image'}
 
-                    for face_encoding in face_encodings:
-                        # Check for face match with images in the image_database
-                        matches = face_recognition.compare_faces(list(image_database.values()), face_encoding)
+                if len(face_locations) > 0:
+                    face_encoding = face_recognition.face_encodings(rgb_frame, face_locations)[0]
+                    result = {'matched': False, 'message': 'not matching face with the DB stored image'}
 
-                        # If a match is found, update the result dictionary
-                        if True in matches:
-                            first_match_index = matches.index(True)
-                            name = list(image_database.keys())[first_match_index]
-                            logging.info("Name: %s", name)
-                            result = {'matched': True, 'name': name, 'message': 'Match Found!'}
-                            break
+                    matches = face_recognition.compare_faces(list(image_database.values()), face_encoding)
 
-                    # Emit the results to the connected client
-                    emit('face_recognition_result', result)
+                    if True in matches and not match_found:
+                        match_found = True  # Set the flag to True
+                        name = list(image_database.keys())[matches.index(True)]
+                        result = {'matched': True, 'name': name, 'message': 'Match Found!'}
+                        logging.info("Name: %s", result)
+
+                        # Emit the results to the connected client
+                        socketio.emit('face_recognition_result', result)
+
                 else:
-                    emit('face_recognition_result',{'matched': False, 'message': 'There are multiple faces in frame'})
+                    result = {'matched': False, 'message': 'not matching face with the DB stored image'}
+                    logging.info("No face detected")
+
+                # Emit the results to the connected client only if a match has not been found
+                if not match_found:
+                    socketio.emit('face_recognition_result', result)
             else:
-                emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'message': 'please provide real face'})
-                logging.error("frame does not detect a proper face")
+                socketio.emit('face_recognition_result', {'matched': False, 'message': 'please provide real face'})
+                logging.error("please provide a real face")
         else:
-            # Emit an appropriate response to the client
-            emit('face_recognition_result', {'matched': False, 'name': 'Unknown','message': 'failed to detect the face'})
-            logging.error("frame does not detect a proper face")
+            socketio.emit('face_recognition_result', {'matched': False, 'message': 'failed to decode the frame'})
+            logging.error("failed to decode the frame")
 
     except Exception as e:
-        # Emit an error response to the client
-        emit('error', {'message': str(e)})
+        socketio.emit('error', {'message': str(e)})
         logging.error(f"Error: {e}")
+
+# @socketio.on('stream_frame')
+# def handle_webcam_frame(data):
+#     try:
+#         frame_data = data.split(',')[1]
+#         # Decode the base64 encoded image
+#         binary_data = base64.b64decode(frame_data)
+#         frame_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
+#
+#         # Check if 'frame_np' is not None before using it
+#         if frame_np is not None:
+#             # Perform anti-spoofing test using the 'test' function
+#             label, confidence = test(image=frame_np, model_dir=os.path.join("resources", "anti_spoof_models"),
+#                                      device_id=0)
+#
+#             spoofing_threshold = 0.5
+#
+#             if label == 1 and confidence > spoofing_threshold:
+#                 # Proceed with face recognition if not spoofed
+#                 rgb_frame = cv2.cvtColor(frame_np, cv2.COLOR_BGR2RGB)
+#
+#                 # Detect faces in the frame
+#                 face_locations = face_recognition.face_locations(rgb_frame)
+#                 face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)[0]
+#                 matches = face_recognition.compare_faces(list(image_database.values()), face_encodings)
+#                 print("===matches", matches)
+#                 logging.info("matches: %s", matches)
+#                 # name = "" if matches[0] else "Unknown"
+#                 # If a match is found, update the result dictionary
+#                 if matches:
+#                     # name = list(image_database.keys())
+#                     # print("===name", name)
+#                     # logging.info("Name: %s", name)
+#                     result = {'matched': True,'message':'Match Found!'}
+#                     socketio.emit('face_recognition_result', result)
+#                     logging.info("Name: %s", result)
+#
+#                 else:
+#                     socketio.emit('face_recognition_result',
+#                                   {'matched': False, 'message': 'not matching face with the DB stored image'})
+#                 # Emit the results to the connected client
+#
+#             else:
+#                 # Emit an appropriate response to the client if no face is detected
+#                 socketio.emit('face_recognition_result',
+#                               {'matched': False, 'message': 'not matching face with the DB stored image'})
+#         else:
+#             socketio.emit('face_recognition_result', {'matched': False, 'message': 'Please provide a real face'})
+#             logging.error("Please provide a real face")
+#
+#     except Exception as e:
+#         # Emit an error response to the client
+#         socketio.emit('error', {'message': str(e)})
+#         logging.error(f"Error: {e}")
+
+
+
+# @socketio.on('stream_frame')
+# def handle_webcam_frame(data):
+#     try:
+#         # Validate if the data is in the expected format
+#         # if not isinstance(data, str) or not data.startswith('data:image'):
+#         #     raise ValueError('Invalid data format')
+#
+#         # Decode the base64 encoded image
+#         frame_data = data.split(',')[1]
+#         binary_data = base64.b64decode(frame_data)
+#         frame_np = None  # Set a default value before the 'try' block
+#         frameArray = np.frombuffer(binary_data, dtype=np.uint8)
+#
+#         try:
+#             frame_np = cv2.imdecode(frameArray, cv2.IMREAD_COLOR)
+#         except Exception as e:
+#             print(f"Error decoding frame: {e}")
+#
+#         # Check if 'frame_np' is not None before using it
+#         if frame_np is not None:
+#             # Perform anti-spoofing test using the 'test' function
+#             label, confidence = test(image=frame_np, model_dir=os.path.join("resources", "anti_spoof_models"), device_id=0)
+#
+#             spoofing_threshold = 0.5
+#             face_recognition_threshold=0.8
+#
+#             if label == 1 and confidence > spoofing_threshold:
+#                 # Proceed with face recognition if not spoofed
+#                 rgb_frame = cv2.cvtColor(frame_np, cv2.COLOR_BGR2RGB)
+#
+#                 # Detect faces in the frame
+#                 face_locations = face_recognition.face_locations(rgb_frame)
+#                 face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
+#                 # print("===face_encoding", face_encodings)
+#                 # print("===lenoffaceencoding", len(face_encodings))
+#                 if len(face_encodings) == 1:
+#                     # Initialize result dictionary
+#                     # result = {'matched': False, 'name': 'Unknown', 'message': 'not matching face with the DB stored image'}
+#
+#                     for face_encoding in face_encodings:
+#                         print("===end into loop", face_encoding[0])
+#                         # Check for face match with images in the image_database
+#                         matches = face_recognition.compare_faces(list(image_database.values()), face_encoding)
+#
+#                         # If a match is found, update the result dictionary
+#                         if True in matches:
+#                             first_match_index = matches.index(True)
+#                             name = list(image_database.keys())[first_match_index]
+#                             logging.info("Name: %s", name)
+#                             result = {'matched': True, 'name': name, 'message': 'Match Found!'}
+#                             emit('face_recognition_result', result)
+#
+#                             break
+#
+#                         else:
+#                             result = {'matched': False, 'name': 'Unknown',
+#                                       'message': 'not matching face with the DB stored image'}
+#                             emit("face_recognition_result", result)
+#                     # Emit the results to the connected client
+#
+#             else:
+#                 emit('face_recognition_result', {'matched': False, 'name': 'Unknown', 'message': 'please provide real face'})
+#                 logging.error("frame does not detect a proper face")
+#         else:
+#             # Emit an appropriate response to the client
+#             emit('face_recognition_result', {'matched': False, 'name': 'Unknown','message': 'failed to detect the face'})
+#             logging.error("frame does not detect a proper face")
+#
+#     except Exception as e:
+#         # Emit an error response to the client
+#         emit('error', {'message': str(e)})
+#         logging.error(f"Error: {e}")
 
 
 # Main entry point
 if __name__ == '__main__':
-    socketio.run(app, host="0.0.0.0", debug=True, port=5001)
+    socketio.run(app, host="0.0.0.0", debug=True, port=5000)
     video_capture.release()
     cv2.destroyAllWindows()
 
