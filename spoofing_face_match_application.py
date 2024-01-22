@@ -39,7 +39,7 @@ def index():
     return "<h3>Welcome to Facedetection App</h3>"
 
 
-user_image_database = {}
+image_database = {}
 
 
 @socketio.on('connect')
@@ -80,7 +80,7 @@ def joinroom(data):
     logging.info("userid_data: %s", data)
     print("===data", data)
     user_id = data
-    global user_image_database
+    global image_database
     try:
         # Hit the API with the userid
         api_url = f"http://13.126.129.218:6002/api/auth/user-profile-image/{data}"
@@ -90,22 +90,14 @@ def joinroom(data):
         # Check the API response and perform actions accordingly
         if response.status_code == 200:
             api_data = response.json()
-            # print("===>api_data", api_data)# Assuming the API returns JSON data
             profile_image_data = api_data.get('data', [])[0].get('profileImage', None)
             face_name = api_data.get('data', [])[0].get('profileImagePath', None).split('/')[-1].split('.')[0]
-            # print("===profile_image_path", face_name)
-            # print("===profile_image_data", len(profile_image_data))
             binary_data = base64.b64decode(profile_image_data)
             image_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
             face_encoding = face_recognition.face_encodings(image_np)[0]
             logging.info('faceencoding of api face: %s', len(face_encoding))
-
-            # print("===faceencoding of api face", face_encoding)
-            # face_name = "profileImage"
-            user_image_database[user_id] = {"face_encode": face_encoding}
-            # print("===usrimagedatabse", user_image_database)
-            # print("====facename", face_name)
-            return user_image_database
+            image_database = {face_name: face_encoding}
+            return image_database
     except Exception as e:
         logging.error(f"Error: {e}")
 
@@ -121,118 +113,72 @@ height = 480  # Set your desired height
 # working=====>
 @socketio.on('stream_frame')
 def handle_webcam_frame(data):
-    # print("====data", data)
-    start_time = time.time()
-    output_directory = "output_directory"
-    timestamp = datetime.datetime.now()
-
-    if not os.path.exists(output_directory):
-        os.makedirs(output_directory)
-    timestamp_str = timestamp.strftime("%Y-%m-%d_%H-%M-%S.%f")[:-3]  # Format the timestamp
-
-    file_path = f'output_directory/file1_{timestamp_str}.png'
-    with open(file_path, "wb") as f:
-        f.write(base64.b64decode(data["data"]))
     try:
-        user_id = data["id"]
-        print("====>user_id", user_id)
-        if 'anti_spoofing_in_progress' in session:
-            return
-        if user_id in user_image_database:
-            # image_database = user_image_database[user_id]
-            # Mark that an anti-spoofing test is in progress
-            session['anti_spoofing_in_progress'] = True
-            # Decode the base64 encoded image
-            # user_image_database['stream'] = data["data"]
-            # print("====userimagebefore data", user_image_database)
-            user_image_database[user_id]["stream"] = data["data"]
-            # print("=====user_image_databasestream_after", user_image_database)
-            # binary_data = base64.b64decode(user_image_database[user_id].stream)
-            user_image_database[user_id]["binary_data"]=base64.b64decode(user_image_database[user_id]["stream"])
-            # print("===bin", binary_data)
+        # Decode the base64 encoded image
+        binary_data = base64.b64decode(data)
+        frame_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
 
-            user_image_database[user_id]["frame_np"]=cv2.imdecode(np.frombuffer(user_image_database[user_id]["binary_data"], dtype=np.uint8), cv2.IMREAD_COLOR)
-            # frame_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
-            # frame_np_resized = cv2.resize(frame_np, (width, height))
-            # Check if 'frame_np' is not None before using it
-            if user_image_database[user_id]["frame_np"] is not None:
-                # Perform anti-spoofing test using the 'test' function
-                label, confidence = test(image=user_image_database[user_id]["frame_np"], model_dir=os.path.join("resources", "anti_spoof_models"),
-                                         device_id=0)
+        # Check if 'frame_np' is not None before using it
+        if frame_np is not None:
+            # Perform anti-spoofing test using the 'test' function
+            label, confidence = test(image=frame_np, model_dir=os.path.join("resources", "anti_spoof_models"),
+                                     device_id=0)
 
-                print("===lable", label)
-                spoofing_threshold = 0.5
+            print("===lable", label)
+            spoofing_threshold = 0.5
 
-                if label == 1:
-                    # Proceed with face recognition if not spoofed
-                    rgb_frame = cv2.cvtColor(user_image_database[user_id]["frame_np"], cv2.COLOR_BGR2RGB)
-                    face_locations = face_recognition_model(user_image_database[user_id]["frame_np"], 1)
+            if label == 1:
+                # Proceed with face recognition if not spoofed
+                rgb_frame = cv2.cvtColor(frame_np, cv2.COLOR_BGR2RGB)
+                face_locations = face_recognition_model(frame_np, 1)
 
-                    print("==face_locations", face_locations)
-                    if len(face_locations) > 0:
-                        # Extract face encodings for all detected faces
-                        for face_location in face_locations:
-                            top, right, bottom, left = face_location.top(), face_location.right(), face_location.bottom(), face_location.left()
-                            face_encodings = face_recognition.face_encodings(user_image_database[user_id]["frame_np"], [(top, right, bottom, left)])
-                            # print("==face_encoding", face_encodings)
+                print("==face_locations", face_locations)
+                if len(face_locations) > 0:
+                    # Extract face encodings for all detected faces
+                    for face_location in face_locations:
+                        top, right, bottom, left = face_location.top(), face_location.right(), face_location.bottom(), face_location.left()
+                        face_encodings = face_recognition.face_encodings(frame_np, [(top, right, bottom, left)])
+                        print("==face_encoding", face_encodings)
 
-                            # Initialize result dictionary
-                            # result = {'matched': False, 'name': "Unknown", 'message': 'not matching face with the DB stored image'}
-                            # logging.info("====result", result)
-                            # Check for face match with images in the image_database
-                            for known_name, known_encoding in user_image_database[user_id].items():
-                                distances = face_recognition.face_distance([user_image_database[user_id]["face_encode"]], face_encodings[0])
-                                print("==distance", distances)
-                                # Choose a suitable threshold for confidence
-                                confidence_threshold = 0.6
-                                distance_threshold = 0.7  # Set your desired face distance threshold here
+                        # Initialize result dictionary
+                        result = {'matched': False, 'name': "Unknown", 'message': 'not matching face with the DB stored image'}
 
-                                # Check if the distance is below the threshold
-                                if distances[0] < distance_threshold:
-                                    print("====dist0", distances[0])
-                                    result = {'matched': True, 'name': known_name, 'confidence': 1 - distances[0],
-                                              'message': 'Match Found!'}
-                                    socketio.emit("face_recognition_result", result)
-                                    logging.info("====result %s:", result)
-                                    user_image_database["user_id"].clear()
-                                    print("===lenofuserimagedata", len(user_image_database))
-                                    # image_database.clear()
-                                    # logging.info("-----imagedatabase %s:", len(image_database))
-                                    print("===result", result)
-                                    break
-                                else:
-                                    result = {'matched': False, 'name': "Unknown",
-                                              'message': 'not matching face with the DB stored image'}
-                                    socketio.emit("face_recognition_result", result)
-                                    logging.info("====result %s:", result)
-                                    user_image_database.clear()
-                    else:
-                        user_image_database.clear()
-                        result = {'matched': False, 'message': 'No face detected'}
-                        socketio.emit('face_recognition_result', )
-                        logging.info("====result %s:", result)
-                else:
-                    # logging.info("spoof detect=====imagedatabase %s:", len(image_database))
-                    result = {'matched': False, 'message': 'Please provide a real face'}
-                    socketio.emit('face_recognition_result', result)
-                    logging.info("====result %s:", result)
+                        # Check for face match with images in the image_database
+                        for known_name, known_encoding in image_database.items():
+                            distances = face_recognition.face_distance([known_encoding], face_encodings[0])
+
+                            # Choose a suitable threshold for confidence
+                            confidence_threshold = 0.6
+                            distance_threshold = 0.5  # Set your desired face distance threshold here
+
+                            # Check if the distance is below the threshold
+                            if distances[0] < distance_threshold:
+                                result = {'matched': True, 'name': known_name, 'confidence': 1 - distances[0],
+                                          'message': 'Match Found!'}
+                                break
+
+                        image_database.clear()
+                        logging.info("=====imagedatabase %s:", len(image_database))
+                        socketio.emit('face_recognition_result', result)
+
             else:
-                # logging.info("no frame=====imagedatabase %s:", len(image_database))
-                socketio.emit('face_recognition_result', {'matched': False, 'message': 'Failed to detect the frame'})
-            end_time = time.time()
-            execution_time = end_time - start_time
-            print(f"Execution Time: {execution_time} seconds")
+                image_database.clear()
+                logging.info("spoof detect=====imagedatabase %s:", len(image_database))
+                socketio.emit('face_recognition_result', {'matched': False, 'message': 'Please provide a real face'})
         else:
-            logging.warning("User-specific image database not found for user: %s",
-                            user_id)
+            image_database.clear()
+            logging.info("no frame=====imagedatabase %s:", len(image_database))
+            socketio.emit('face_recognition_result', {'matched': False, 'message': 'Failed to decode the frame'})
     except Exception as e:
         socketio.emit('error', {'message': str(e)})
         logging.error(f"Error: {e}")
     finally:
-        #Mark that the anti-spoofing test is completed
-
         session.pop('anti_spoofing_in_progress', None)
-print("===userdatabase", user_image_database)
+
+
+
+
+
 
 # Event handler for user disconnecting
 
@@ -245,7 +191,7 @@ def handle_disconnect():
 
 
 def cleanup():
-    user_image_database["user_id"].clear()
+  image_database.clear()
 
 
 if __name__ == '__main__':
