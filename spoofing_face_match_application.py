@@ -114,6 +114,9 @@ height = 480  # Set your desired height
 @socketio.on('stream_frame')
 def handle_webcam_frame(data):
     try:
+        if 'anti_spoofing_in_progress' in session:
+            return
+        session['anti_spoofing_in_progress'] = True
         # Decode the base64 encoded image
         binary_data = base64.b64decode(data)
         frame_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
