@@ -12,10 +12,11 @@ import cv2
 import face_recognition
 import numpy as np
 import requests
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, jsonify
 from flask_cors import CORS
 from flask_socketio import SocketIO
 import atexit
+from flask_caching import Cache
 
 
 # Import the 'test' function from your existing code
@@ -31,12 +32,11 @@ app = Flask(__name__)
 CORS(app)
 socketio = SocketIO(app, ping_interval=10000, ping_timeout=5000, reconnection=True, cors_allowed_origins="*", cookie=False)
 
-
-
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 @app.route('/')
 def index():
-    return "<h3>Welcome to Facedetection App</h3>"
+    return render_template("index.html")
 
 
 image_database = {}
@@ -45,6 +45,7 @@ image_database = {}
 @socketio.on('connect')
 def handle_connect():
     logging.info("Client connected")
+    print("===Client Connected")
     socketio.emit('connect', {'status': 'connected with server'})
 
 import dlib
@@ -96,7 +97,8 @@ def joinroom(data):
             image_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
             face_encoding = face_recognition.face_encodings(image_np)[0]
             logging.info('faceencoding of api face: %s', len(face_encoding))
-            image_database = {face_name: face_encoding}
+            image_database = {user_id: face_encoding}
+            logging.info("imagedatabase length %s :", len(image_database))
             return image_database
     except Exception as e:
         logging.error(f"Error: {e}")
@@ -147,30 +149,35 @@ def handle_webcam_frame(data):
                         result = {'matched': False, 'name': "Unknown", 'message': 'not matching face with the DB stored image'}
 
                         # Check for face match with images in the image_database
-                        for known_name, known_encoding in image_database.items():
-                            distances = face_recognition.face_distance([known_encoding], face_encodings[0])
+                        for user_id, user_known_encoding in image_database.items():
+                            distances = face_recognition.face_distance([user_known_encoding], face_encodings[0])
 
                             # Choose a suitable threshold for confidence
                             confidence_threshold = 0.6
-                            distance_threshold = 0.5  # Set your desired face distance threshold here
+                            distance_threshold = 0.7  # Set your desired face distance threshold here
 
                             # Check if the distance is below the threshold
                             if distances[0] < distance_threshold:
-                                result = {'matched': True, 'name': known_name, 'confidence': 1 - distances[0],
+                                result = {'matched': True, 'name': user_id, 'confidence': 1 - distances[0],
                                           'message': 'Match Found!'}
                                 break
 
                         image_database.clear()
                         logging.info("=====imagedatabase %s:", len(image_database))
                         socketio.emit('face_recognition_result', result)
+                        logging.info("====result %s:", result)
+                else:
+                    result = {'matched': False, 'message': 'No face detected!!'}
+                    socketio.emit('face_recognition_result', result)
+                    logging.info("====result %s:", result)
 
             else:
-                image_database.clear()
-                logging.info("spoof detect=====imagedatabase %s:", len(image_database))
-                socketio.emit('face_recognition_result', {'matched': False, 'message': 'Please provide a real face'})
+                result = {'matched': False, 'message': 'Please provide a real face'}
+                logging.info("spoof detect result %s:", result)
+                socketio.emit('face_recognition_result', result)
         else:
-            image_database.clear()
-            logging.info("no frame=====imagedatabase %s:", len(image_database))
+            # image_database.clear()
+            # logging.info("no frame=====imagedatabase %s:", len(image_database))
             socketio.emit('face_recognition_result', {'matched': False, 'message': 'Failed to decode the frame'})
     except Exception as e:
         socketio.emit('error', {'message': str(e)})
@@ -178,23 +185,26 @@ def handle_webcam_frame(data):
     finally:
         session.pop('anti_spoofing_in_progress', None)
 
-
-
-
-
-
 # Event handler for user disconnecting
 
 
 @socketio.on('disconnect')
 def handle_disconnect():
     logging.info("Client disconnected")
+    print("====client Disconnect")
     socketio.emit('disconnect_response', {'status': 'disconnected'})
     session.pop('anti_spoofing_in_progress', None)
 
 
+@app.route('/clear_all_sessions', methods=['POST'])
+def clear_all_sessions():
+    cleanup()
+    return jsonify({'status': 'success', 'message': 'All sessions cleared'})
+
+
 def cleanup():
-  image_database.clear()
+    image_database.clear()
+    cache.clear()  # Clear the cache
 
 
 if __name__ == '__main__':
