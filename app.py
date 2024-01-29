@@ -12,12 +12,20 @@ import cv2
 import face_recognition
 import numpy as np
 import requests
+<<<<<<< HEAD
 from flask import Flask, render_template, request, session, jsonify
 from flask_cors import CORS
 from flask_socketio import SocketIO
 import atexit
 from flask_caching import Cache
 
+=======
+from flask import Flask, render_template, request, session
+from flask_cors import CORS
+from flask_socketio import SocketIO, emit, join_room
+from decouple import config
+from datetime import datetime, timezone, timedelta
+>>>>>>> d5d1866768af677d4bd87bbf74194bd1571baec9
 
 # Import the 'test' function from your existing code
 from test import test
@@ -38,6 +46,7 @@ cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 def index():
     return render_template("index.html")
 
+<<<<<<< HEAD
 
 image_database = {}
 
@@ -47,6 +56,20 @@ def handle_connect():
     logging.info("Client connected")
     print("===Client Connected")
     socketio.emit('connect', {'status': 'connected with server'})
+=======
+active_sessions ={}
+# Event handler for client connection
+@socketio.on('connect')
+def handle_connect(data):
+    print("===data", data)
+    user_id = data
+    session["user_id"] = user_id
+    if user_id in session:
+        active_sessions[user_id] = request.sid
+        join_room(user_id)
+        socketio.emit('message', {'data': f'Connected as {user_id}'})
+    logging.info(f"User {user_id} connected")
+>>>>>>> d5d1866768af677d4bd87bbf74194bd1571baec9
 
 import dlib
 

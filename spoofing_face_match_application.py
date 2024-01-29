@@ -161,7 +161,7 @@ def handle_webcam_frame(data):
                             distances = face_recognition.face_distance([known_encoding], face_encodings[0])
 
                             # Choose a suitable threshold for confidence
-                            confidence_threshold = 0.8
+                            confidence_threshold = 0.7
                             distance_threshold = 0.7  # Set your desired face distance threshold here
 
                             # Check if the distance is below the threshold
