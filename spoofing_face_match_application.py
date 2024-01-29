@@ -4,21 +4,19 @@ import datetime
 import logging
 import os
 import time
-
 from pytz import timezone
-
-
 import cv2
 import face_recognition
 import numpy as np
 import requests
-from flask import Flask, render_template, request, session, jsonify
+from flask import Flask, render_template, request, session
 from flask_cors import CORS
 from flask_socketio import SocketIO
 import atexit
-from flask_caching import Cache
+import dlib
 
-
+import asyncio
+import time
 # Import the 'test' function from your existing code
 from test import test
 indian_timezone = timezone('Asia/Kolkata')
@@ -29,30 +27,33 @@ logger = logging.getLogger()
 
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key_here'
 CORS(app)
-socketio = SocketIO(app, ping_interval=10000, ping_timeout=5000, reconnection=True, cors_allowed_origins="*", cookie=False)
+sio = SocketIO(app, supports_credentials=True, ping_interval=10000, ping_timeout=5000, reconnection=True, cors_allowed_origins="*", cookie=False)
+# sio = socketio.Server()
+user_data = {}
 
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 @app.route('/')
 def index():
     return "<h3>Welcome to Facedetection App</h3>"
 
 
+
 image_database = {}
 
 
-@socketio.on('connect')
+@sio.on('connect')
 def handle_connect():
+    # sid = request.sid
     logging.info("Client connected")
-    print("===Client Connected")
-    socketio.emit('connect', {'status': 'connected with server'})
+    sio.emit('connect', {'status': 'connected with server'})
 
-import dlib
 
-@socketio.on('get_face')
+@sio.on('get_face')
 def face_data(data):
     # print("====data", len(data))
+    sid = request.sid
     try:
         if data:
             binary_data = base64.b64decode(data)
@@ -65,18 +66,17 @@ def face_data(data):
                     for face_encoding in face_encodings:
                         # print("===>encode", len(face_encoding))
                         logging.info('encode len  of facedata: %s', len(face_encoding))
-                        socketio.emit('get_face', {"status": 200, 'message': 'Face Detected!'})
+                        sio.emit('get_face', {"status": 200, 'message': 'Face Detected!'})
                 else:
                     logging.info('encode len  of facedata: %s', "Not get face encodings")
-                    socketio.emit('get_face', {"status": 400, 'message': 'Please upload a proper face image'})
+                    sio.emit('get_face', {"status": 400, 'message': 'Please upload a proper face image'}, sid=sid)
         else:
-            socketio.emit('get_face', {"status": 400,'message': 'Not received face data'})
+            sio.emit('get_face', {"status": 400,'message': 'Not received face data'}, sid=sid)
     except Exception as e:
         logging.error(f"Error: {e}")
 
 
-
-@socketio.on('join_Room')
+@sio.on('join_Room')
 def joinroom(data):
     logging.info("userid_data: %s", data)
     print("===data", data)
@@ -97,8 +97,7 @@ def joinroom(data):
             image_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
             face_encoding = face_recognition.face_encodings(image_np)[0]
             logging.info('faceencoding of api face: %s', len(face_encoding))
-            image_database = {user_id: face_encoding}
-            logging.info("imagedatabase length %s :", len(image_database))
+            image_database = {user_id : face_encoding}
             return image_database
     except Exception as e:
         logging.error(f"Error: {e}")
@@ -106,28 +105,37 @@ def joinroom(data):
 
 face_recognition_model = dlib.get_frontal_face_detector()
 
-import time
+
 
 # Specify the desired width and height
 width = 640  # Set your desired width
 height = 480  # Set your desired height
+user_data_frame = {}
 
 # working=====>
-@socketio.on('stream_frame')
+@sio.on('stream_frame')
 def handle_webcam_frame(data):
+    # print("=====frame", data)
+    sid = request.sid
+    print("===sid", sid)
     try:
+        # user_id = request.sid
         if 'anti_spoofing_in_progress' in session:
             return
+        # user_data_frame[""] = data
+        # print("===user_data_frame", user_data_frame)
         session['anti_spoofing_in_progress'] = True
         # Decode the base64 encoded image
-        binary_data = base64.b64decode(data)
+        # data = data.split(',')[1]
+        # frame = await asyncio.create_task(data["data"])
+        # print("====<frame", frame)
+        binary_data = base64.b64decode(data["data"])
         frame_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
 
         # Check if 'frame_np' is not None before using it
         if frame_np is not None:
             # Perform anti-spoofing test using the 'test' function
-            label, confidence = test(image=frame_np, model_dir=os.path.join("resources", "anti_spoof_models"),
-                                     device_id=0)
+            label, confidence = test(image=frame_np, model_dir=os.path.join("resources", "anti_spoof_models"), device_id=0)
 
             print("===lable", label)
             spoofing_threshold = 0.5
@@ -149,8 +157,8 @@ def handle_webcam_frame(data):
                         result = {'matched': False, 'name': "Unknown", 'message': 'not matching face with the DB stored image'}
 
                         # Check for face match with images in the image_database
-                        for user_id, user_known_encoding in image_database.items():
-                            distances = face_recognition.face_distance([user_known_encoding], face_encodings[0])
+                        for user_id , known_encoding in image_database.items():
+                            distances = face_recognition.face_distance([known_encoding], face_encodings[0])
 
                             # Choose a suitable threshold for confidence
                             confidence_threshold = 0.6
@@ -162,135 +170,49 @@ def handle_webcam_frame(data):
                                           'message': 'Match Found!'}
                                 break
 
-                        image_database.clear()
-                        logging.info("=====imagedatabase %s:", len(image_database))
-                        socketio.emit('face_recognition_result', result)
-                        logging.info("====result %s:", result)
+                        sio.emit('face_recognition_result', result, room=sid)
+                        logging.info("====result %s", result)
+
+                        print("result:", result)
                 else:
                     result = {'matched': False, 'message': 'No face detected!!'}
-                    socketio.emit('face_recognition_result', result)
+                    sio.emit('face_recognition_result', result , room=sid)
                     logging.info("====result %s:", result)
-
             else:
-                result = {'matched': False, 'message': 'Please provide a real face'}
-                logging.info("spoof detect result %s:", result)
-                socketio.emit('face_recognition_result', result)
+                result = {'matched': False, 'message': 'Please provide a real face!!'}
+                logging.info("====result %s", result)
+                sio.emit('face_recognition_result', result, room=sid)
         else:
-            # image_database.clear()
-            # logging.info("no frame=====imagedatabase %s:", len(image_database))
-            socketio.emit('face_recognition_result', {'matched': False, 'message': 'Failed to decode the frame'})
+            result = {'matched': False, 'message': 'Failed to decode the frame'}
+            logging.info("====result %s", result)
+            sio.emit('face_recognition_result', result, room=sid)
+        # task = socketio.start_background_task(handle_webcam_frame)
+        # await task.wait()
     except Exception as e:
-        socketio.emit('error', {'message': str(e)})
+        sio.emit('error', {'message': str(e)})
         logging.error(f"Error: {e}")
     finally:
         session.pop('anti_spoofing_in_progress', None)
 
 # Event handler for user disconnecting
 
+print("===user_daata_frame", user_data_frame)
 
-@socketio.on('disconnect')
+
+@sio.on('disconnect')
 def handle_disconnect():
     logging.info("Client disconnected")
-    print("====client Disconnect")
-    socketio.emit('disconnect_response', {'status': 'disconnected'})
+    sio.emit('disconnect_response', {'status': 'disconnected'})
     session.pop('anti_spoofing_in_progress', None)
-
-
-@app.route('/clear_all_sessions', methods=['POST'])
-def clear_all_sessions():
-    cleanup()
-    return jsonify({'status': 'success', 'message': 'All sessions cleared'})
 
 
 def cleanup():
     image_database.clear()
-    cache.clear()  # Clear the cache
 
 
 if __name__ == '__main__':
     atexit.register(cleanup)
-    socketio.run(app, host="0.0.0.0", debug=True, port=5001)
+    sio.run(app, host="0.0.0.0", debug=True, port=5001)
 
 
-# # Event handler for streaming frames from the client
-# @socketio.on('stream_frame')
-# def handle_webcam_frame(data):
-#     try:
-#         # Check if an anti-spoofing test is already in progress
-#         if 'anti_spoofing_in_progress' in socketio.session:
-#             return
-#
-#         # Mark that an anti-spoofing test is in progress
-#         socketio.session['anti_spoofing_in_progress'] = True
-#
-#         # Decode the base64 encoded image
-#         binary_data = base64.b64decode(data)
-#         frame_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
-#
-#         # Perform anti-spoofing test using the 'test' function
-#         label, confidence = test(image=frame_np, model_dir=os.path.join("resources", "anti_spoof_models"),
-#                                  device_id=0)
-#
-#         # Check if the frame is not None and anti-spoofing test passed
-#         if frame_np is not None and label == 1:
-#             # Proceed with face recognition
-#             rgb_frame = cv2.cvtColor(frame_np, cv2.COLOR_BGR2RGB)
-#             face_locations = face_recognition_model(frame_np, 1)
-#
-#             if len(face_locations) > 0:
-#                 # Extract face encodings for all detected faces
-#                 for face_location in face_locations:
-#                     top, right, bottom, left = face_location.top(), face_location.right(), face_location.bottom(), face_location.left()
-#                     face_encodings = face_recognition.face_encodings(frame_np, [(top, right, bottom, left)])
-#
-#                     # Check for face match with images in the image_database
-#                     for known_name, known_encoding in image_database.items():
-#                         distances = face_recognition.face_distance([known_encoding], face_encodings[0])
-#
-#                         # Choose a suitable threshold for confidence
-#                         distance_threshold = 0.5
-#
-#                         # Check if the distance is below the threshold
-#                         if distances[0] < distance_threshold:
-#                             result = {'matched': True, 'name': known_name, 'confidence': 1 - distances[0],
-#                                       'message': 'Match Found!'}
-#                             socketio.emit("face_recognition_result", result)
-#                             logging.info("====result %s:", result)
-#                             break
-#                         else:
-#                             result = {'matched': False, 'name': "Unknown",
-#                                       'message': 'Not matching face with the DB stored image'}
-#                             socketio.emit("face_recognition_result", result)
-#                             logging.info("====result %s:", result)
-#
-#             else:
-#                 socketio.emit('face_recognition_result', {'matched': False, 'message': 'No face detected'})
-#
-#         else:
-#             socketio.emit('face_recognition_result', {'matched': False, 'message': 'Please provide a real face'})
-#
-#     except Exception as e:
-#         socketio.emit('error', {'message': str(e)})
-#         logging.error(f"Error: {e}")
-#
-#     finally:
-#         # Mark that the anti-spoofing test is completed
-#         socketio.session.pop('anti_spoofing_in_progress', None)
-#
-#
-# # Event handler for user disconnecting
-# @socketio.on('disconnect')
-# def handle_disconnect():
-#     logging.info("Client disconnected")
-#     socketio.emit('disconnect_response', {'status': 'disconnected'})
-#     socketio.session.pop('anti_spoofing_in_progress', None)
-#
-#
-# if __name__ == '__main__':
-#     # Run the application
-#     socketio.run(app, host="0.0.0.0", debug=True, port=5001)
-#
-#     # Release the webcam
-#     video_capture.release()
-#     cv2.destroyAllWindows()
-#     image_database.clear()
+
