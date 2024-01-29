@@ -36,8 +36,7 @@ user_data = {}
 
 @app.route('/')
 def index():
-    return "<h3>Welcome to Facedetection App</h3>"
-
+    return render_template("index.html")
 
 
 image_database = {}
@@ -161,21 +160,14 @@ def handle_webcam_frame(data):
                             distances = face_recognition.face_distance([known_encoding], face_encodings[0])
 
                             # Choose a suitable threshold for confidence
-                            confidence_threshold = 0.7
+                            confidence_threshold = 0.6
                             distance_threshold = 0.7  # Set your desired face distance threshold here
 
                             # Check if the distance is below the threshold
                             if distances[0] < distance_threshold:
-                                confidence = 1 - distances[0]
-
-                                # Check if the confidence level is above the threshold
-                                if confidence > confidence_threshold:
-                                    result = {'matched': True, 'name': user_id, 'confidence': confidence,
-                                              'message': 'Match Found!'}
-                                else:
-                                    result = {'matched': False, 'name': "Unknown", 'confidence': confidence,
-                                              'message': 'Low confidence'}
-                            break
+                                result = {'matched': True, 'name': user_id, 'confidence': 1 - distances[0],
+                                          'message': 'Match Found!'}
+                                break
 
                         sio.emit('face_recognition_result', result, room=sid)
                         logging.info("====result %s", result)
