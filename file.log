@@ -4080,3 +4080,31 @@ RuntimeError: You need to use the eventlet server. See the Deployment section of
 2024-01-30 11:49:05 India Standard TimeINFO:werkzeug: * Restarting with stat
 2024-01-30 11:49:10 India Standard TimeWARNING:werkzeug: * Debugger is active!
 2024-01-30 11:49:10 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-30 12:04:05 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-30 12:04:09 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-30 12:04:09 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-30 12:06:24 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-30 12:06:28 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-30 12:06:28 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-30 12:08:36 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-30 12:08:41 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-30 12:08:41 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-30 12:09:15 India Standard TimeINFO:werkzeug: * Detected change in 'D:\\Projects\\Face_Detection\\face_matched_livespoof\\spoofing_face_match_application.py', reloading
+2024-01-30 12:09:16 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-30 12:09:20 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-30 12:09:20 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-30 12:15:23 India Standard TimeINFO:werkzeug: * Detected change in 'D:\\Projects\\Face_Detection\\face_matched_livespoof\\spoofing_face_match_application.py', reloading
+2024-01-30 12:15:23 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-30 12:15:28 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-30 12:15:28 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-30 12:15:39 India Standard TimeINFO:werkzeug: * Detected change in 'D:\\Projects\\Face_Detection\\face_matched_livespoof\\spoofing_face_match_application.py', reloading
+2024-01-30 12:15:39 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-30 12:15:44 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-30 12:15:44 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-30 12:17:59 India Standard TimeINFO:werkzeug: * Detected change in 'D:\\Projects\\Face_Detection\\face_matched_livespoof\\spoofing_face_match_application.py', reloading
+2024-01-30 12:17:59 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-30 12:18:03 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-30 12:18:03 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297
+2024-01-30 12:19:03 India Standard TimeINFO:werkzeug: * Restarting with stat
+2024-01-30 12:19:07 India Standard TimeWARNING:werkzeug: * Debugger is active!
+2024-01-30 12:19:07 India Standard TimeINFO:werkzeug: * Debugger PIN: 801-066-297

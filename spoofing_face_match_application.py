@@ -77,17 +77,13 @@ def face_data(data):
 
 @sio.on('join_Room')
 def joinroom(data):
+    global image_database
     image_databases = {}
     logging.info("userid_data: %s", data)
     print("===data", data)
     sid = request.sid
-    print("====sid into join room event", sid)
     user_id = data
-    if user_id not in image_database:
-        image_database[user_id] = {}
-
-    user_data[sid] = user_id
-    print("===user_id", data)
+    print("====sid into join room event", sid)
     try:
         # Hit the API with the userid
         api_url = f"http://13.126.129.218:6002/api/auth/user-profile-image/{data}"
@@ -103,8 +99,8 @@ def joinroom(data):
             image_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
             face_encoding = face_recognition.face_encodings(image_np)[0]
             logging.info('faceencoding of api face: %s', len(face_encoding))
-            image_database[user_id][sid] = face_encoding
-            print("===image_databases", image_database)
+            image_database = {user_id: face_encoding}
+            logging.info("imagedatabase length %s :", len(image_database))
             # print("===image_database", image_database)
             return image_database
     except Exception as e:
@@ -159,20 +155,18 @@ def handle_webcam_frame(data):
                     for face_location in face_locations:
                         top, right, bottom, left = face_location.top(), face_location.right(), face_location.bottom(), face_location.left()
                         face_encodings = face_recognition.face_encodings(frame_np, [(top, right, bottom, left)])
-                        print("==face_encoding", face_encodings)
+                        # print("==face_encoding", face_encodings)
 
                         # Initialize result dictionary
                         result = {'matched': False, 'name': "Unknown", 'message': 'not matching face with the DB stored image'}
 
                         # Check for face match with images in the image_database
                         for user_id , known_encoding in image_database.items():
-                            print("===>user_id into loop imagedatabase", image_database)
-                            known_encoding_np = np.array(known_encoding)  # Convert to numpy array
-                            distances = face_recognition.face_distance([known_encoding_np], face_encodings[0])
+                            distances = face_recognition.face_distance([known_encoding], face_encodings[0])
 
                             # Choose a suitable threshold for confidence
                             confidence_threshold = 0.6
-                            distance_threshold = 0.7  # Set your desired face distance threshold here
+                            distance_threshold = 0.6  # Set your desired face distance threshold here
 
                             # Check if the distance is below the threshold
                             if distances[0] < distance_threshold:
@@ -181,7 +175,8 @@ def handle_webcam_frame(data):
                                 break
 
                         sio.emit('face_recognition_result', result, room=sid)
-                        print("====sioemit result", sid, result)
+                        print("====sid into loop", sid)
+                        print("====sioemit result", result)
                         logging.info("====result %s", result)
 
                         print("result:", result)
