@@ -166,8 +166,9 @@ def handle_webcam_frame(data):
 
                         # Check for face match with images in the image_database
                         for user_id , known_encoding in image_database.items():
-                            print("==>imagedatabase in for loop", image_database)
-                            distances = face_recognition.face_distance([known_encoding], face_encodings[0])
+                            print("===>user_id into loop imagedatabase", image_database)
+                            known_encoding_np = np.array(known_encoding)  # Convert to numpy array
+                            distances = face_recognition.face_distance([known_encoding_np], face_encodings[0])
 
                             # Choose a suitable threshold for confidence
                             confidence_threshold = 0.6
