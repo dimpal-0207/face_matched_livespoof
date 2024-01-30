@@ -16,7 +16,6 @@
 
         socket.on('connect', () => {
          const additionalData = {
-            userId: '1234',
             console.log('Connected to server');
              socket.emit('connect', additionalData);
         });

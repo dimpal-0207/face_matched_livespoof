@@ -44,9 +44,9 @@ image_database = {}
 
 @sio.on('connect')
 def handle_connect():
-    # sid = request.sid
+    sid = request.sid
     logging.info("Client connected")
-    sio.emit('connect', {'status': 'connected with server'})
+    sio.emit('connect', {'status': 'connected with server'},room=sid)
 
 
 @sio.on('get_face')
@@ -77,10 +77,16 @@ def face_data(data):
 
 @sio.on('join_Room')
 def joinroom(data):
+    image_databases = {}
     logging.info("userid_data: %s", data)
     print("===data", data)
+    sid = request.sid
     user_id = data
-    global image_database
+    if user_id not in image_database:
+        image_database[user_id] = {}
+
+    user_data[sid] = user_id
+    print("===user_id", data)
     try:
         # Hit the API with the userid
         api_url = f"http://13.126.129.218:6002/api/auth/user-profile-image/{data}"
@@ -96,7 +102,9 @@ def joinroom(data):
             image_np = cv2.imdecode(np.frombuffer(binary_data, dtype=np.uint8), cv2.IMREAD_COLOR)
             face_encoding = face_recognition.face_encodings(image_np)[0]
             logging.info('faceencoding of api face: %s', len(face_encoding))
-            image_database = {user_id : face_encoding}
+            image_database[user_id][sid] = face_encoding
+            print("===image_databases", image_database)
+            # print("===image_database", image_database)
             return image_database
     except Exception as e:
         logging.error(f"Error: {e}")
@@ -109,7 +117,7 @@ face_recognition_model = dlib.get_frontal_face_detector()
 # Specify the desired width and height
 width = 640  # Set your desired width
 height = 480  # Set your desired height
-user_data_frame = {}
+
 
 # working=====>
 @sio.on('stream_frame')
@@ -157,6 +165,7 @@ def handle_webcam_frame(data):
 
                         # Check for face match with images in the image_database
                         for user_id , known_encoding in image_database.items():
+                            print("==>imagedatabase in for loop", image_database)
                             distances = face_recognition.face_distance([known_encoding], face_encodings[0])
 
                             # Choose a suitable threshold for confidence
@@ -195,8 +204,6 @@ def handle_webcam_frame(data):
 
 # Event handler for user disconnecting
 
-print("===user_daata_frame", user_data_frame)
-
 
 @sio.on('disconnect')
 def handle_disconnect():
@@ -211,7 +218,7 @@ def cleanup():
 
 if __name__ == '__main__':
     atexit.register(cleanup)
-    sio.run(app, host="0.0.0.0", debug=True, port=5001)
+    sio.run(app, host="0.0.0.0", debug=True, port=5002)
 
 
 
