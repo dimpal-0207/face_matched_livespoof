@@ -81,6 +81,7 @@ def joinroom(data):
     logging.info("userid_data: %s", data)
     print("===data", data)
     sid = request.sid
+    print("====sid into join room event", sid)
     user_id = data
     if user_id not in image_database:
         image_database[user_id] = {}
@@ -124,7 +125,7 @@ height = 480  # Set your desired height
 def handle_webcam_frame(data):
     # print("=====frame", data)
     sid = request.sid
-    print("===sid", sid)
+    print("===sid in stream frame event", sid)
     try:
         # user_id = request.sid
         if 'anti_spoofing_in_progress' in session:
@@ -179,6 +180,7 @@ def handle_webcam_frame(data):
                                 break
 
                         sio.emit('face_recognition_result', result, room=sid)
+                        print("====sioemit result", sid, result)
                         logging.info("====result %s", result)
 
                         print("result:", result)
