@@ -166,7 +166,7 @@ def handle_webcam_frame(data):
 
                             # Choose a suitable threshold for confidence
                             confidence_threshold = 0.6
-                            distance_threshold = 0.6  # Set your desired face distance threshold here
+                            distance_threshold = 0.4  # Set your desired face distance threshold here
 
                             # Check if the distance is below the threshold
                             if distances[0] < distance_threshold:
